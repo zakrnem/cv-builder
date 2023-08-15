@@ -43,16 +43,6 @@ button {
   cursor: pointer;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.title-logo {
-  height: 4rem;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
