@@ -1,0 +1,5 @@
+Write the content for all the components.
+Fix spacing between containers of form inputs.
+Refactor style sheets, unify repetitive styles on the main css file.
+Display input values on a separate componet that will be the CV Layout.
+Implement form validation and help messages.
