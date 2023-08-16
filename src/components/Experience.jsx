@@ -8,7 +8,7 @@ function Experience() {
     startDate: "",
     endDate: "",
     location: "",
-    description: ""
+    description: "",
   });
   const [isFormVisible, setIsFormVisible] = useState(false);
 
@@ -67,7 +67,7 @@ function Experience() {
           value={input.location}
           onChange={(e) => handleInputChange("location", e.target.value)}
         />
-         <label htmlFor="description">Description</label>
+        <label htmlFor="description">Description</label>
         <input
           type="text"
           value={input.description}
