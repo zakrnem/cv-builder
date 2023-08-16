@@ -1,43 +1,43 @@
-.personal-details {
+.experience {
   border-radius: 1rem;
   padding: 1.5rem 2rem;
   background-color: rgb(227, 227, 227);
 }
 
-.personal-heading {
+.experience-heading {
   display: flex;
   gap: 0.5rem;
 }
 
-.personal-heading > h2 {
+.experience-heading > h2 {
   margin: 0;
 }
 
-.personal-heading > button > img {
+.experience-heading > button > img {
   height: 1.5rem;
   filter: invert(15%) sepia(48%) saturate(534%) hue-rotate(167deg)
     brightness(103%) contrast(91%);
 }
 
-.personal-heading > button {
+.experience-heading > button {
   background: none;
   border: none;
 }
 
-.personal-heading > button:hover {
+.experience-heading > button:hover {
   opacity: 0.8;
 }
 
-.personal-details > form {
+.experience > form {
   margin-top: 1rem;
   display: grid;
 }
 
-.personal-details > form > label {
+.experience > form > label {
   text-align: start;
 }
 
-.personal-details > form > input {
+.experience > form > input {
   margin-bottom: 1rem;
   padding: 0.4rem 0.3rem;
   border-radius: 0.6rem;

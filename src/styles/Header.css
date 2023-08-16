@@ -1,28 +1,30 @@
 header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .title-logo {
-    height: 4rem;
+  height: 4rem;
 }
 
 .gh-logo {
-    margin-left: -.75rem;
-    height: 1.2rem;
-    filter: invert(15%) sepia(48%) saturate(534%) hue-rotate(167deg) brightness(103%) contrast(91%);
+  margin-left: -0.75rem;
+  height: 1.2rem;
+  filter: invert(15%) sepia(48%) saturate(534%) hue-rotate(167deg)
+    brightness(103%) contrast(91%);
 }
 
 .gh-logo:hover {
-    transform: rotate(720deg);
-    transition: transform 1s;
+  transform: rotate(720deg);
+  transition: transform 1s;
 }
 
 .gh-logo:active {
-    filter: invert(8%) sepia(50%) saturate(5142%) hue-rotate(0deg) brightness(104%) contrast(117%);
+  filter: invert(8%) sepia(50%) saturate(5142%) hue-rotate(0deg)
+    brightness(104%) contrast(117%);
 }
 
 .gh-logo:focus {
-    outline: #213547 solid 1px;
+  outline: #213547 solid 1px;
 }
