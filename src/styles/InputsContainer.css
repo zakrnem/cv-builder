@@ -1,0 +1,28 @@
+.inputs-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.inputs-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputs-heading > h2 {
+  margin: 0;
+}
+
+.inputs-heading > button > img {
+  height: 1.5rem;
+  filter: invert(15%) sepia(48%) saturate(534%) hue-rotate(167deg)
+    brightness(103%) contrast(91%);
+}
+
+.inputs-heading > button {
+  background: none;
+  border: none;
+}
+
+.inputs-heading > button:hover {
+  opacity: 0.8;
+}

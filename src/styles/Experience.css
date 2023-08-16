@@ -4,30 +4,6 @@
   background-color: rgb(227, 227, 227);
 }
 
-.experience-heading {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.experience-heading > h2 {
-  margin: 0;
-}
-
-.experience-heading > button > img {
-  height: 1.5rem;
-  filter: invert(15%) sepia(48%) saturate(534%) hue-rotate(167deg)
-    brightness(103%) contrast(91%);
-}
-
-.experience-heading > button {
-  background: none;
-  border: none;
-}
-
-.experience-heading > button:hover {
-  opacity: 0.8;
-}
-
 .experience > form {
   margin-top: 1rem;
   display: grid;

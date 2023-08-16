@@ -24,7 +24,7 @@ function Experience() {
   };
   return (
     <div className="experience">
-      <div className="experience-heading">
+      <div className="inputs-heading">
         <h2>Experience</h2>
         <button
           onClick={toggleForm}

@@ -52,8 +52,3 @@ button {
     color: #747bff;
   }
 }
-
-.inputs-container {
-  display: grid;
-  gap: 1rem;
-}

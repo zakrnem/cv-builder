@@ -22,7 +22,7 @@ function PersonalDetails() {
   };
   return (
     <div className="personal-details">
-      <div className="personal-heading">
+      <div className="inputs-heading">
         <h2>Personal Details</h2>
         <button
           onClick={toggleForm}

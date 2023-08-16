@@ -4,30 +4,6 @@
   background-color: rgb(227, 227, 227);
 }
 
-.personal-heading {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.personal-heading > h2 {
-  margin: 0;
-}
-
-.personal-heading > button > img {
-  height: 1.5rem;
-  filter: invert(15%) sepia(48%) saturate(534%) hue-rotate(167deg)
-    brightness(103%) contrast(91%);
-}
-
-.personal-heading > button {
-  background: none;
-  border: none;
-}
-
-.personal-heading > button:hover {
-  opacity: 0.8;
-}
-
 .personal-details > form {
   margin-top: 1rem;
   display: grid;

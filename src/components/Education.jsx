@@ -23,7 +23,7 @@ function Education() {
   };
   return (
     <div className="education">
-      <div className="education-heading">
+      <div className="inputs-heading">
         <h2>Education</h2>
         <button
           onClick={toggleForm}
