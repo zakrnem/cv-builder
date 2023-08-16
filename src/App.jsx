@@ -8,9 +8,11 @@ function App() {
   return (
     <>
       <Header />
-      <PersonalDetails />
-      <Experience />
-      <Education />
+      <div className="inputs-container">
+        <PersonalDetails />
+        <Experience />
+        <Education />
+      </div>
     </>
   );
 }
