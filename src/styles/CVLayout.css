@@ -1,0 +1,15 @@
+.cv-container {
+  display: flex;
+}
+
+.cv-personal-details {
+  background-color: #c2ebd5;
+}
+
+.cv-details {
+  display: flex;
+}
+
+.cv-details > .icon {
+  height: 1rem;
+}

@@ -1,7 +1,7 @@
 import "../styles/InputsContainer.css";
 import PersonalDetails from "./PersonalDetails";
 import Experience from "./Experience";
-import Education from "./Education"
+import Education from "./Education";
 
 function InputsContainer() {
   return (
