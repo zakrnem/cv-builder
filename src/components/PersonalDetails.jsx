@@ -40,19 +40,19 @@ function PersonalDetails({
         <label htmlFor="phoneNumber">Phone number</label>
         <input
           type="tel"
-          value={input.details.number}
+          value={input.details.phone}
           placeholder="+0 000 000"
           onChange={(e) =>
-            handleInputChange("details", "number", e.target.value)
+            handleInputChange("details", "phone", e.target.value)
           }
         />
         <label htmlFor="address">Address</label>
         <input
           type="text"
-          value={input.details.address}
+          value={input.details.location}
           placeholder="Enter your city or postal code"
           onChange={(e) =>
-            handleInputChange("details", "address", e.target.value)
+            handleInputChange("details", "location", e.target.value)
           }
         />
       </form>

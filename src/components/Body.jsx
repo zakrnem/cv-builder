@@ -15,8 +15,8 @@ function Body() {
     details: {
       name: "",
       email: "",
-      number: "",
-      address: "",
+      phone: "",
+      location: "",
     },
     experience: {
       company: "",
