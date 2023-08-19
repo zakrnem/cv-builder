@@ -1,13 +1,13 @@
 import "./App.css";
 import Header from "./components/Header";
-import InputsContainer from "./components/InputsContainer";
+import Body from "./components/Body";
 
 function App() {
   return (
     <>
       <Header />
       <div className="container">
-        <InputsContainer />
+        <Body />
       </div>
     </>
   );

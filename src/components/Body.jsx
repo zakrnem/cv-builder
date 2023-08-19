@@ -1,11 +1,11 @@
-import "../styles/InputsContainer.css";
+import "../styles/Body.css";
 import PersonalDetails from "./PersonalDetails";
 import Experience from "./Experience";
 import Education from "./Education";
 import CVLayout from "./CVLayout";
 import { useState } from "react";
 
-function InputsContainer() {
+function Body() {
   const [isFormVisible, setIsFormVisible] = useState(true);
   const toggleForm = () => {
     setIsFormVisible((prevIsFormVisible) => !prevIsFormVisible);
@@ -69,6 +69,7 @@ function InputsContainer() {
           input={input}
         />
       </div>
+      
       <CVLayout
         name={input.details.name}
         email={input.details.email}
@@ -79,4 +80,4 @@ function InputsContainer() {
   );
 }
 
-export default InputsContainer;
+export default Body;
