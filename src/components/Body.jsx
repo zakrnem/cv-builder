@@ -6,6 +6,7 @@ import Education from "./Education";
 import CVdetails from "./CVdetails";
 import { useState } from "react";
 import CVexperience from "./CVexperience";
+import CVeducation from "./CVeducation";
 
 function Body() {
   const [isFormVisible, setIsFormVisible] = useState(true);
@@ -26,7 +27,8 @@ function Body() {
       startDate: "2021-06-23",
       endDate: "2023-08-19",
       location: "Qatar",
-      description: "Experienced and diligent Janitorial Services Specialist with a proven track record of maintaining clean and organized environments. Adept at performing various cleaning tasks, adhering to safety protocols, and contributing to a positive team atmosphere. Possesses excellent attention to detail and the ability to work independently. Seeking to leverage skills and experience in providing exceptional janitorial services.",
+      description:
+        "Experienced and diligent Janitorial Services Specialist with a proven track record of maintaining clean and organized environments. Adept at performing various cleaning tasks, adhering to safety protocols, and contributing to a positive team atmosphere. Possesses excellent attention to detail and the ability to work independently. Seeking to leverage skills and experience in providing exceptional janitorial services.",
     },
     education: {
       school: "Ken's High School",
@@ -87,6 +89,14 @@ function Body() {
           endDate={input.experience.endDate}
           location={input.experience.location}
           description={input.experience.description}
+        />
+
+        <CVeducation
+          school={input.education.school}
+          degree={input.education.degree}
+          startDate={input.education.startDate}
+          endDate={input.education.endDate}
+          location={input.education.location}
         />
       </div>
     </>

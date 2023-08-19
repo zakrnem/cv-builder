@@ -1,0 +1,20 @@
+.cv-education > h2 {
+  margin: 0;
+  background-color: var(--grey);
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+.cv-education-container {
+  display: flex;
+  gap: 2rem;
+  padding-top: 0.75rem;
+}
+
+.cv-education-container > * > * {
+    margin: 0;
+}
+
+.school-degree p:first-child {
+  font-weight: bold;
+}
