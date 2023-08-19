@@ -1,26 +1,6 @@
-import { useState } from "react";
 import "../styles/Education.css";
 
-function Education() {
-  const [input, setInput] = useState({
-    school: "",
-    degree: "",
-    startDate: "",
-    endDate: "",
-    location: "",
-  });
-  const [isFormVisible, setIsFormVisible] = useState(false);
-
-  const handleInputChange = (field, value) => {
-    setInput((prevInput) => ({
-      ...prevInput,
-      [field]: value,
-    }));
-    console.log(input);
-  };
-  const toggleForm = () => {
-    setIsFormVisible((prevIsFormVisible) => !prevIsFormVisible);
-  };
+function Education({toggleForm, isFormVisible, handleInputChange, input}) {
   return (
     <div className="education">
       <div className="inputs-heading">
@@ -39,32 +19,32 @@ function Education() {
         <label htmlFor="school">School</label>
         <input
           type="text"
-          value={input.school}
-          onChange={(e) => handleInputChange("school", e.target.value)}
+          value={input.education.school}
+          onChange={(e) => handleInputChange("education", "school", e.target.value)}
         />
         <label htmlFor="degree">Degree</label>
         <input
           type="text"
-          value={input.degree}
-          onChange={(e) => handleInputChange("degree", e.target.value)}
+          value={input.education.degree}
+          onChange={(e) => handleInputChange("education", "degree", e.target.value)}
         />
         <label htmlFor="startDate">Start Date</label>
         <input
           type="date"
-          value={input.startDate}
-          onChange={(e) => handleInputChange("startDate", e.target.value)}
+          value={input.education.startDate}
+          onChange={(e) => handleInputChange("education", "startDate", e.target.value)}
         />
         <label htmlFor="endDate">End Date</label>
         <input
           type="date"
-          value={input.endDate}
-          onChange={(e) => handleInputChange("endDate", e.target.value)}
+          value={input.education.endDate}
+          onChange={(e) => handleInputChange("education", "endDate", e.target.value)}
         />
         <label htmlFor="location">Location</label>
         <input
           type="text"
-          value={input.location}
-          onChange={(e) => handleInputChange("location", e.target.value)}
+          value={input.education.location}
+          onChange={(e) => handleInputChange("education", "location", e.target.value)}
         />
       </form>
     </div>

@@ -1,25 +1,6 @@
-import { useState } from "react";
 import "../styles/PersonalDetails.css";
 
-function PersonalDetails() {
-  const [input, setInput] = useState({
-    name: "",
-    email: "",
-    number: "",
-    address: "",
-  });
-  const [isFormVisible, setIsFormVisible] = useState(true);
-
-  const handleInputChange = (field, value) => {
-    setInput((prevInput) => ({
-      ...prevInput,
-      [field]: value,
-    }));
-    console.log(input);
-  };
-  const toggleForm = () => {
-    setIsFormVisible((prevIsFormVisible) => !prevIsFormVisible);
-  };
+function PersonalDetails({toggleForm, isFormVisible, handleInputChange, input}) { 
   return (
     <div className="personal-details">
       <div className="inputs-heading">
@@ -38,26 +19,26 @@ function PersonalDetails() {
         <label htmlFor="fullName">Full name</label>
         <input
           type="text"
-          value={input.name}
-          onChange={(e) => handleInputChange("name", e.target.value)}
+          value={input.details.name}
+          onChange={(e) => handleInputChange("details", "name", e.target.value)}
         />
         <label htmlFor="email">Email</label>
         <input
           type="email"
-          value={input.email}
-          onChange={(e) => handleInputChange("email", e.target.value)}
+          value={input.details.email}
+          onChange={(e) => handleInputChange("details", "email", e.target.value)}
         />
         <label htmlFor="phoneNumber">Phone number</label>
         <input
           type="tel"
-          value={input.number}
-          onChange={(e) => handleInputChange("number", e.target.value)}
+          value={input.details.number}
+          onChange={(e) => handleInputChange("details", "number", e.target.value)}
         />
         <label htmlFor="address">Address</label>
         <input
           type="text"
-          value={input.address}
-          onChange={(e) => handleInputChange("address", e.target.value)}
+          value={input.details.address}
+          onChange={(e) => handleInputChange("details", "address", e.target.value)}
         />
       </form>
     </div>

@@ -1,27 +1,6 @@
-import { useState } from "react";
 import "../styles/Experience.css";
 
-function Experience() {
-  const [input, setInput] = useState({
-    company: "",
-    position: "",
-    startDate: "",
-    endDate: "",
-    location: "",
-    description: "",
-  });
-  const [isFormVisible, setIsFormVisible] = useState(false);
-
-  const handleInputChange = (field, value) => {
-    setInput((prevInput) => ({
-      ...prevInput,
-      [field]: value,
-    }));
-    console.log(input);
-  };
-  const toggleForm = () => {
-    setIsFormVisible((prevIsFormVisible) => !prevIsFormVisible);
-  };
+function Experience({toggleForm, isFormVisible, handleInputChange, input}) {
   return (
     <div className="experience">
       <div className="inputs-heading">
@@ -40,38 +19,38 @@ function Experience() {
         <label htmlFor="companyName">Company Name</label>
         <input
           type="text"
-          value={input.company}
-          onChange={(e) => handleInputChange("company", e.target.value)}
+          value={input.experience.company}
+          onChange={(e) => handleInputChange("experience", "company", e.target.value)}
         />
         <label htmlFor="positionTitle">Position Title</label>
         <input
           type="text"
-          value={input.positon}
-          onChange={(e) => handleInputChange("position", e.target.value)}
+          value={input.experience.positon}
+          onChange={(e) => handleInputChange("experience", "position", e.target.value)}
         />
         <label htmlFor="startDate">Start Date</label>
         <input
           type="date"
-          value={input.startDate}
-          onChange={(e) => handleInputChange("startDate", e.target.value)}
+          value={input.experience.startDate}
+          onChange={(e) => handleInputChange("experience", "startDate", e.target.value)}
         />
         <label htmlFor="endDate">End Date</label>
         <input
           type="date"
-          value={input.endDate}
-          onChange={(e) => handleInputChange("endDate", e.target.value)}
+          value={input.experience.endDate}
+          onChange={(e) => handleInputChange("experience", "endDate", e.target.value)}
         />
         <label htmlFor="location">Location</label>
         <input
           type="text"
-          value={input.location}
-          onChange={(e) => handleInputChange("location", e.target.value)}
+          value={input.experience.location}
+          onChange={(e) => handleInputChange("experience", "location", e.target.value)}
         />
         <label htmlFor="description">Description</label>
         <input
           type="text"
-          value={input.description}
-          onChange={(e) => handleInputChange("description", e.target.value)}
+          value={input.experience.description}
+          onChange={(e) => handleInputChange("experience", "description", e.target.value)}
         />
       </form>
     </div>
