@@ -20,6 +20,7 @@ function Education({ toggleForm, isFormVisible, handleInputChange, input }) {
         <input
           type="text"
           value={input.education.school}
+          placeholder="Name of the School"
           onChange={(e) =>
             handleInputChange("education", "school", e.target.value)
           }
@@ -28,6 +29,7 @@ function Education({ toggleForm, isFormVisible, handleInputChange, input }) {
         <input
           type="text"
           value={input.education.degree}
+          placeholder="Type your degree"
           onChange={(e) =>
             handleInputChange("education", "degree", e.target.value)
           }
@@ -52,6 +54,7 @@ function Education({ toggleForm, isFormVisible, handleInputChange, input }) {
         <input
           type="text"
           value={input.education.location}
+          placeholder="Enter an address"
           onChange={(e) =>
             handleInputChange("education", "location", e.target.value)
           }

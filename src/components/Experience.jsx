@@ -20,6 +20,7 @@ function Experience({ toggleForm, isFormVisible, handleInputChange, input }) {
         <input
           type="text"
           value={input.experience.company}
+          placeholder="Your employer's name"
           onChange={(e) =>
             handleInputChange("experience", "company", e.target.value)
           }
@@ -28,6 +29,7 @@ function Experience({ toggleForm, isFormVisible, handleInputChange, input }) {
         <input
           type="text"
           value={input.experience.positon}
+          placeholder="Enter your role"
           onChange={(e) =>
             handleInputChange("experience", "position", e.target.value)
           }
@@ -52,6 +54,7 @@ function Experience({ toggleForm, isFormVisible, handleInputChange, input }) {
         <input
           type="text"
           value={input.experience.location}
+          placeholder="Type a landmark, city, or address"
           onChange={(e) =>
             handleInputChange("experience", "location", e.target.value)
           }
