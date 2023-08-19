@@ -11,11 +11,11 @@ function CVexperience({
   return (
     <div className="cv-experience">
       <h2>Professional Experience</h2>
-      <div className="date">Date</div>
-      <div className="location">Location</div>
-      <div className="company">Company Name</div>
-      <div className="job-title">Job Title</div>
-      <div className="description">Description</div>
+      <div className="date">{startDate} - {endDate}</div>
+      <div className="location">{location}</div>
+      <div className="company">{company}</div>
+      <div className="job-title">{position}</div>
+      <div className="description">{description}</div>
     </div>
   );
 }
