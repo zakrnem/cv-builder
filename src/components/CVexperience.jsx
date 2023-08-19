@@ -1,3 +1,5 @@
+import "../styles/CVexperience.css";
+
 function CVexperience({
   company,
   position,
@@ -9,13 +11,11 @@ function CVexperience({
   return (
     <div className="cv-experience">
       <h2>Professional Experience</h2>
-      <div className="cv-experience-grid">
-        <div>Date</div>
-        <div>Location</div>
-        <div>Company Name</div>
-        <div>Job Title</div>
-        <div>Description</div>
-      </div>
+      <div className="date">Date</div>
+      <div className="location">Location</div>
+      <div className="company">Company Name</div>
+      <div className="job-title">Job Title</div>
+      <div className="description">Description</div>
     </div>
   );
 }

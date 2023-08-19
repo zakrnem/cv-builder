@@ -1,4 +1,6 @@
 .cv-container {
-  display: flex;
+  display: grid;
   width: 100%;
+  height: min-content;
+  gap: 1rem;
 }
