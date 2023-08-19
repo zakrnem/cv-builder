@@ -2,7 +2,7 @@ import "../styles/Body.css";
 import PersonalDetails from "./PersonalDetails";
 import Experience from "./Experience";
 import Education from "./Education";
-import CVLayout from "./CVLayout";
+import CVdetails from "./CVdetails";
 import { useState } from "react";
 
 function Body() {
@@ -70,12 +70,12 @@ function Body() {
         />
       </div>
       
-      <CVLayout
-        name={input.details.name}
-        email={input.details.email}
-        phone={input.details.phone}
-        location={input.details.location}
-      />
+      <CVdetails
+      name={input.details.name}
+      email={input.details.email}
+      phone={input.details.phone}
+      location={input.details.location} />
+
     </>
   );
 }
