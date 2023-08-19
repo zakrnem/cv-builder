@@ -25,6 +25,7 @@
 }
 
 .cv-experience > .company {
+    font-weight: bold;
     grid-column: span 3;
     justify-self: start;
 }
@@ -35,7 +36,7 @@
 }
 
 .cv-experience > .description {
-    grid-column: 2;
+    grid-column: 2 / span 3;
     grid-row: span 2;
     justify-self: start;
 }
