@@ -1,9 +1,11 @@
 import "../styles/Body.css";
+import "../styles/CVcontainer.css";
 import PersonalDetails from "./PersonalDetails";
 import Experience from "./Experience";
 import Education from "./Education";
 import CVdetails from "./CVdetails";
 import { useState } from "react";
+import CVexperience from "./CVexperience";
 
 function Body() {
   const [isFormVisible, setIsFormVisible] = useState(true);
@@ -69,13 +71,24 @@ function Body() {
           input={input}
         />
       </div>
-      
-      <CVdetails
-      name={input.details.name}
-      email={input.details.email}
-      phone={input.details.phone}
-      location={input.details.location} />
 
+      <div className="cv-container">
+        <CVdetails
+          name={input.details.name}
+          email={input.details.email}
+          phone={input.details.phone}
+          location={input.details.location}
+        />
+
+        <CVexperience
+          company={input.experience.company}
+          position={input.experience.position}
+          startDate={input.experience.startDate}
+          endDate={input.experience.endDate}
+          location={input.experience.location}
+          description={input.experience.description}
+        />
+      </div>
     </>
   );
 }
