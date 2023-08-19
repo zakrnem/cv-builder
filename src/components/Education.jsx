@@ -1,6 +1,6 @@
 import "../styles/Education.css";
 
-function Education({toggleForm, isFormVisible, handleInputChange, input}) {
+function Education({ toggleForm, isFormVisible, handleInputChange, input }) {
   return (
     <div className="education">
       <div className="inputs-heading">
@@ -20,31 +20,41 @@ function Education({toggleForm, isFormVisible, handleInputChange, input}) {
         <input
           type="text"
           value={input.education.school}
-          onChange={(e) => handleInputChange("education", "school", e.target.value)}
+          onChange={(e) =>
+            handleInputChange("education", "school", e.target.value)
+          }
         />
         <label htmlFor="degree">Degree</label>
         <input
           type="text"
           value={input.education.degree}
-          onChange={(e) => handleInputChange("education", "degree", e.target.value)}
+          onChange={(e) =>
+            handleInputChange("education", "degree", e.target.value)
+          }
         />
         <label htmlFor="startDate">Start Date</label>
         <input
           type="date"
           value={input.education.startDate}
-          onChange={(e) => handleInputChange("education", "startDate", e.target.value)}
+          onChange={(e) =>
+            handleInputChange("education", "startDate", e.target.value)
+          }
         />
         <label htmlFor="endDate">End Date</label>
         <input
           type="date"
           value={input.education.endDate}
-          onChange={(e) => handleInputChange("education", "endDate", e.target.value)}
+          onChange={(e) =>
+            handleInputChange("education", "endDate", e.target.value)
+          }
         />
         <label htmlFor="location">Location</label>
         <input
           type="text"
           value={input.education.location}
-          onChange={(e) => handleInputChange("education", "location", e.target.value)}
+          onChange={(e) =>
+            handleInputChange("education", "location", e.target.value)
+          }
         />
       </form>
     </div>
