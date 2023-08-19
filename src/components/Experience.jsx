@@ -28,7 +28,7 @@ function Experience({ toggleForm, isFormVisible, handleInputChange, input }) {
         <label htmlFor="positionTitle">Position Title</label>
         <input
           type="text"
-          value={input.experience.positon}
+          value={input.experience.position}
           placeholder="Enter your role"
           onChange={(e) =>
             handleInputChange("experience", "position", e.target.value)
