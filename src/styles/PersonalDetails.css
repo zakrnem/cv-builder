@@ -1,7 +1,7 @@
 .personal-details {
   border-radius: 1rem;
   padding: 1.5rem 2rem;
-  background-color: var(--grey)
+  background-color: var(--grey);
 }
 
 .personal-details > form {
