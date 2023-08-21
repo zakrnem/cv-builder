@@ -1,7 +1,6 @@
 .personal-details {
   border-radius: 1rem;
   padding: 1.5rem 2rem;
-  background-color: var(--grey);
 }
 
 .personal-details > form {
@@ -11,11 +10,4 @@
 
 .personal-details > form > label {
   text-align: start;
-}
-
-.personal-details > form > input {
-  margin-bottom: 1rem;
-  padding: 0.4rem 0.3rem;
-  border-radius: 0.6rem;
-  border: none;
 }

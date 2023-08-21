@@ -10,7 +10,7 @@ function CVexperience({
 }) {
   return (
     <div className="cv-experience">
-      <h2>Professional Experience</h2>
+      <h3>Professional Experience</h3>
       <div className="cv-experience-container">
         <div className="date-location">
           <p>{startDate} - {endDate}</p>

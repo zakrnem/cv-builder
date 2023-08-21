@@ -1,7 +1,6 @@
 .experience {
   border-radius: 1rem;
   padding: 1.5rem 2rem;
-  background-color: rgb(227, 227, 227);
 }
 
 .experience > form {
@@ -11,11 +10,4 @@
 
 .experience > form > label {
   text-align: start;
-}
-
-.experience > form > input {
-  margin-bottom: 1rem;
-  padding: 0.4rem 0.3rem;
-  border-radius: 0.6rem;
-  border: none;
 }

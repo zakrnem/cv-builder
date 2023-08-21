@@ -3,6 +3,11 @@
   gap: 1rem;
 }
 
+.inputs-container > * {
+  width: 25vw;
+  background-color: var(--white);
+}
+
 .inputs-heading {
   display: flex;
   justify-content: space-between;
@@ -25,4 +30,12 @@
 
 .inputs-heading > button:hover {
   opacity: 0.8;
+}
+
+.inputs-container > * > form > input {
+  background-color: var(--grey);
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.6rem;
+  border: none;
 }

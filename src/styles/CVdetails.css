@@ -1,7 +1,5 @@
 .cv-personal-details {
-  background-color: #c2ebd5;
-  width: 100%;
-  height: min-content;
+  background-color: var(--header);
   display: grid;
   justify-items: center;
   padding: 0.5rem 1rem;
@@ -10,6 +8,8 @@
 .cv-personal-details > h2 {
   margin: 0;
   padding: 1rem 0;
+  color: var(--white);
+  font-size: 2rem;
 }
 
 .cv-details {
@@ -19,6 +19,14 @@
   padding: 0.5rem 0;
 }
 
+.cv-details > * {
+  color: var(--white);
+  display: flex;
+  align-items: center;
+}
+
 .cv-details > * > .icon {
+  margin-right: 0.25rem;
   height: 1rem;
+  filter: var(--light-filter)
 }

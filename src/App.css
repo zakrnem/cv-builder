@@ -1,16 +1,17 @@
 body {
   margin: 0;
+  background-color: var(--grey);
 }
 
 #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: var(--vertical);
 }
 
 .container {
   display: flex;
-  gap: 1rem;
-  width: 100vw;
+  gap: var(--horizontal);
+  padding: 0 var(--horizontal);
 }

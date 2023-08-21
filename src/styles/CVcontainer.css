@@ -1,6 +1,15 @@
+.cv-sheet {
+  background-color: var(--white);
+}
+
 .cv-container {
   display: grid;
-  width: 100%;
   height: min-content;
   gap: 1rem;
+}
+
+.cv-experience,
+.cv-education {
+  width: 85%;
+  justify-self: center;
 }

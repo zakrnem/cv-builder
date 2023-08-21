@@ -3,7 +3,7 @@ import "../styles/CVeducation.css";
 function CVeducation({ school, degree, startDate, endDate, location }) {
   return (
     <div className="cv-education">
-      <h2>Education</h2>
+      <h3>Education</h3>
       <div className="cv-education-container">
         <div className="date-location">
           <p>
