@@ -24,8 +24,8 @@ function Body() {
     experience: {
       company: "Umbrella Inc",
       position: "Janitor",
-      startDate: "2021-06-23",
-      endDate: "2023-08-19",
+      startDate: "2021-06",
+      endDate: "2023-08",
       location: "Qatar",
       description:
         "Experienced and diligent Janitorial Services Specialist with a proven track record of maintaining clean and organized environments. Adept at performing various cleaning tasks, adhering to safety protocols, and contributing to a positive team atmosphere. Possesses excellent attention to detail and the ability to work independently. Seeking to leverage skills and experience in providing exceptional janitorial services.",
@@ -33,8 +33,8 @@ function Body() {
     education: {
       school: "Ken's High School",
       degree: "High School Diploma",
-      startDate: "1985-01-08",
-      endDate: "2000-04-06",
+      startDate: "1985-01",
+      endDate: "2000-04",
       location: "Monte Carlo",
     },
   });

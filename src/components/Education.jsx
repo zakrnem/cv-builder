@@ -36,7 +36,7 @@ function Education({ toggleForm, isFormVisible, handleInputChange, input }) {
         />
         <label htmlFor="startDate">Start Date</label>
         <input
-          type="date"
+          type="month"
           value={input.education.startDate}
           onChange={(e) =>
             handleInputChange("education", "startDate", e.target.value)
@@ -44,7 +44,7 @@ function Education({ toggleForm, isFormVisible, handleInputChange, input }) {
         />
         <label htmlFor="endDate">End Date</label>
         <input
-          type="date"
+          type="month"
           value={input.education.endDate}
           onChange={(e) =>
             handleInputChange("education", "endDate", e.target.value)

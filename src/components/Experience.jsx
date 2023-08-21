@@ -36,7 +36,7 @@ function Experience({ toggleForm, isFormVisible, handleInputChange, input }) {
         />
         <label htmlFor="startDate">Start Date</label>
         <input
-          type="date"
+          type="month"
           value={input.experience.startDate}
           onChange={(e) =>
             handleInputChange("experience", "startDate", e.target.value)
@@ -44,7 +44,7 @@ function Experience({ toggleForm, isFormVisible, handleInputChange, input }) {
         />
         <label htmlFor="endDate">End Date</label>
         <input
-          type="date"
+          type="month"
           value={input.experience.endDate}
           onChange={(e) =>
             handleInputChange("experience", "endDate", e.target.value)
