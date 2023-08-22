@@ -1,5 +1,9 @@
 .cv-sheet {
   background-color: var(--white);
+  display: flex;
+  flex-basis: 100ch;
+  min-width: 45ch;
+  max-height: 141ch;
 }
 
 .cv-container {

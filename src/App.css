@@ -12,6 +12,8 @@ body {
 
 .container {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: var(--horizontal);
   padding: 0 var(--horizontal);
 }

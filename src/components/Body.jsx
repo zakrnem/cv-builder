@@ -47,7 +47,7 @@ function Body() {
       },
     }));
     console.log(input);
-  };
+  }
 
   return (
     <>
