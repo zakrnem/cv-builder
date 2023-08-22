@@ -1,1 +1,5 @@
+Add more rows to description input.
+    Wrap text on input.
+Add multiple jobs & education button.
+Clear resume/load example buttons.
 Implement form validation and help messages.

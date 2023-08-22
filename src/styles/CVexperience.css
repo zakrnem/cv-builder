@@ -26,3 +26,10 @@
 .company {
   font-weight: bold;
 }
+
+.experience-description {
+  resize: vertical;
+  background-color: var(--grey);
+  border: none;
+  padding: 0.5rem 0.6rem;
+}

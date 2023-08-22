@@ -60,9 +60,10 @@ function Experience({ toggleForm, numberFormVisible, handleInputChange, input })
           }
         />
         <label htmlFor="description">Description</label>
-        <input
-          type="text"
+        <textarea
           value={input.experience.description}
+          rows={4}
+          className="experience-description"
           onChange={(e) =>
             handleInputChange("experience", "description", e.target.value)
           }
