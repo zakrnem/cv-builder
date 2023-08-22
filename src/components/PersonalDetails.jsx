@@ -2,7 +2,7 @@ import "../styles/PersonalDetails.css";
 
 function PersonalDetails({
   toggleForm,
-  isFormVisible,
+  numberFormVisible,
   handleInputChange,
   input,
 }) {
@@ -11,16 +11,16 @@ function PersonalDetails({
       <div className="inputs-heading">
         <h2>Personal Details</h2>
         <button
-          onClick={toggleForm}
+          onClick={() => toggleForm(1)}
           style={{
             transition: "transform 0.3s",
-            transform: isFormVisible ? "" : "rotate(180deg)",
+            transform: numberFormVisible !== 1 ? "" : "rotate(180deg)",
           }}
         >
           <img src="./src/assets/down-svgrepo-com.svg" />
         </button>
       </div>
-      <form style={{ display: isFormVisible ? "" : "none" }}>
+      <form style={{ display: numberFormVisible === 1 ? "" : "none" }}>
         <label htmlFor="fullName">Full name</label>
         <input
           type="text"

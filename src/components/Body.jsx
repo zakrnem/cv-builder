@@ -9,9 +9,9 @@ import CVexperience from "./CVexperience";
 import CVeducation from "./CVeducation";
 
 function Body() {
-  const [isFormVisible, setIsFormVisible] = useState(true);
-  const toggleForm = () => {
-    setIsFormVisible((prevIsFormVisible) => !prevIsFormVisible);
+  const [numberFormVisible, setNumberFormVisible] = useState(1);
+  const toggleForm = (arg) => {
+    arg === numberFormVisible ? setNumberFormVisible(0) : setNumberFormVisible(arg);    
   };
 
   const [input, setInput] = useState({
@@ -54,21 +54,21 @@ function Body() {
       <div className="inputs-container">
         <PersonalDetails
           toggleForm={toggleForm}
-          isFormVisible={isFormVisible === true}
+          numberFormVisible={numberFormVisible}
           handleInputChange={handleInputChange}
           input={input}
         />
 
         <Experience
           toggleForm={toggleForm}
-          isFormVisible={isFormVisible === true}
+          numberFormVisible={numberFormVisible}
           handleInputChange={handleInputChange}
           input={input}
         />
 
         <Education
           toggleForm={toggleForm}
-          isFormVisible={isFormVisible === true}
+          numberFormVisible={numberFormVisible}
           handleInputChange={handleInputChange}
           input={input}
         />

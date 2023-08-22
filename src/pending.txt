@@ -1,3 +1,1 @@
-Refactor style sheets, unify repetitive styles on the main css file.
-Display input values on a separate componet that will be the CV Layout.
 Implement form validation and help messages.

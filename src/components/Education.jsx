@@ -1,21 +1,21 @@
 import "../styles/Education.css";
 
-function Education({ toggleForm, isFormVisible, handleInputChange, input }) {
+function Education({ toggleForm, numberFormVisible, handleInputChange, input }) {
   return (
     <div className="education">
       <div className="inputs-heading">
         <h2>Education</h2>
         <button
-          onClick={toggleForm}
+          onClick={() => toggleForm(3)}
           style={{
             transition: "transform 0.3s",
-            transform: isFormVisible ? "" : "rotate(180deg)",
+            transform: numberFormVisible !== 3 ? "" : "rotate(180deg)",
           }}
         >
           <img src="./src/assets/down-svgrepo-com.svg" />
         </button>
       </div>
-      <form style={{ display: isFormVisible ? "" : "none" }}>
+      <form style={{ display: numberFormVisible === 3 ? "" : "none" }}>
         <label htmlFor="school">School</label>
         <input
           type="text"

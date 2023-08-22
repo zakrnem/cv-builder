@@ -1,21 +1,21 @@
 import "../styles/Experience.css";
 
-function Experience({ toggleForm, isFormVisible, handleInputChange, input }) {
+function Experience({ toggleForm, numberFormVisible, handleInputChange, input }) {
   return (
     <div className="experience">
       <div className="inputs-heading">
         <h2>Experience</h2>
         <button
-          onClick={toggleForm}
+          onClick={() => toggleForm(2)}
           style={{
             transition: "transform 0.3s",
-            transform: isFormVisible ? "" : "rotate(180deg)",
+            transform: numberFormVisible !== 2 ? "" : "rotate(180deg)",
           }}
         >
           <img src="./src/assets/down-svgrepo-com.svg" />
         </button>
       </div>
-      <form style={{ display: isFormVisible ? "" : "none" }}>
+      <form style={{ display: numberFormVisible === 2 ? "" : "none" }}>
         <label htmlFor="companyName">Company Name</label>
         <input
           type="text"
