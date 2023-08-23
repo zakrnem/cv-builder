@@ -59,6 +59,7 @@ function Education({ toggleForm, numberFormVisible, handleInputChange, input }) 
             handleInputChange("education", "location", e.target.value)
           }
         />
+      <button className="add-education">+ Education</button>
       </form>
     </div>
   );
