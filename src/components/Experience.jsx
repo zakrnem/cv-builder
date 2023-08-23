@@ -68,6 +68,7 @@ function Experience({ toggleForm, numberFormVisible, handleInputChange, input })
             handleInputChange("experience", "description", e.target.value)
           }
         />
+        <button className="add-experience">+ Experience</button>
       </form>
     </div>
   );

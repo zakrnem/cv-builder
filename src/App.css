@@ -17,4 +17,5 @@ body {
   flex-wrap: wrap;
   gap: var(--horizontal);
   padding: 0 var(--horizontal);
+  padding-bottom: var(--vertical);
 }

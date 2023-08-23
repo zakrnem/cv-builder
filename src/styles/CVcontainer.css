@@ -4,6 +4,7 @@
   flex-basis: 80ch;
   min-width: 45ch;
   min-height: 112.8ch;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
 .cv-container {

@@ -11,3 +11,22 @@
 .experience > form > label {
   text-align: start;
 }
+
+.add-experience {
+  margin-top: 1.5rem;
+  width: fit-content;
+  justify-self: center;
+  padding: 0.5rem 1rem;
+  border-radius: 1.25rem;
+  background-color: var(--white);
+  border: solid 4px var(--grey);
+}
+
+.add-experience:hover {
+  background-color: #f2f2f2;
+}
+
+.add-experience:active {
+  color: white;
+  background-color: black;
+}
