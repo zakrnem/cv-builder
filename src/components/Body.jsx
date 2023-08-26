@@ -7,14 +7,13 @@ import CVdetails from "./CVdetails";
 import CVexperience from "./CVexperience";
 import CVeducation from "./CVeducation";
 import { useState } from "react";
-import { createRoot } from "react-dom/client";
 
 function Body() {
-  const [numberFormVisible, setNumberFormVisible] = useState(2 /*1*/);
-  const toggleForm = (arg) => {
-    arg === numberFormVisible
-      ? setNumberFormVisible(0)
-      : setNumberFormVisible(arg);
+  const [numberGroupVisible, setNumberGroupVisible] = useState(2);
+  const toggleGroup = (arg) => {
+    arg === numberGroupVisible
+      ? setNumberGroupVisible(0)
+      : setNumberGroupVisible(arg);
   };
 
   const [input, setInput] = useState({
@@ -52,45 +51,29 @@ function Body() {
     console.log(input);
   };
 
-  const experienceNewInstance = (e) => {
-    e.preventDefault();
-    const container = document.querySelector(".experience-instance1");
-    const root = createRoot(container);
-    root.render(
-      <Experience
-        toggleForm={toggleForm}
-        numberFormVisible={numberFormVisible}
-        handleInputChange={handleInputChange}
-        input={input}
-        experienceNewInstance={experienceNewInstance}
-      />
-    );
-  };
-
   return (
     <>
       <div className="inputs-container">
-        <PersonalDetails
+       {/*  <PersonalDetails
           toggleForm={toggleForm}
           numberFormVisible={numberFormVisible}
           handleInputChange={handleInputChange}
           input={input}
-        />
+        /> */}
 
         <Experience
-          toggleForm={toggleForm}
-          numberFormVisible={numberFormVisible}
+          toggleGroup={toggleGroup}
+          numberGroupVisible={numberGroupVisible}
           handleInputChange={handleInputChange}
           input={input}
-          experienceNewInstance={experienceNewInstance}
         />
 
-        <Education
+       {/*  <Education
           toggleForm={toggleForm}
           numberFormVisible={numberFormVisible}
           handleInputChange={handleInputChange}
           input={input}
-        />
+        /> */}
       </div>
 
       <div className="cv-sheet">

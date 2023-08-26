@@ -1,5 +1,4 @@
 import "../styles/Experience.css";
-import InputGroupHeading from "./InputGroupHeading";
 
 function ExperienceForm({
   toggleForm,

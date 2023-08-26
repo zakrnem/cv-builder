@@ -22,5 +22,3 @@ Add multiple jobs & education button.
     
 Clear resume/load example buttons.
 Implement form validation and help messages.
-
-

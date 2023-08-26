@@ -4,33 +4,38 @@ import InputGroupHeading from "./InputGroupHeading";
 import InstanceHeading from "./InstanceHeading";
 
 function Experience({
-  toggleForm,
-  numberFormVisible,
+  toggleGroup,
+  numberGroupVisible,
   handleInputChange,
   input,
   experienceNewInstance,
 }) {
-    const handleEditClick = () => {
-        console.log('Edit experience')
-    }
+  const handleEditClick = () => {
+    console.log("Edit experience");
+  };
   return (
     <div className="experience">
       <InputGroupHeading
         title={"Experience"}
-        toggleForm={toggleForm}
-        numberFormVisible={numberFormVisible}
+        toggleGroup={toggleGroup}
+        numberGroupVisible={numberGroupVisible}
       />
-      <InstanceHeading 
-      title={input.experience.company}
-      handleEditClick={handleEditClick}/>
-      <ExperienceForm
+      <InstanceHeading
+        title={input.experience.company}
+        handleEditClick={handleEditClick}
+        numberGroupVisible={numberGroupVisible}
+      />
+      {/* <ExperienceForm
         toggleForm={toggleForm}
         numberFormVisible={numberFormVisible}
         handleInputChange={handleInputChange}
         input={input}
         experienceNewInstance={experienceNewInstance}
+      /> */}
+      <AddInstanceButton
+        experienceNewInstance={experienceNewInstance}
+        numberGroupVisible={numberGroupVisible}
       />
-      <AddInstanceButton experienceNewInstance={experienceNewInstance} />
     </div>
   );
 }
