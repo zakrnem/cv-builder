@@ -4,14 +4,17 @@ import PersonalDetails from "./PersonalDetails";
 import Experience from "./Experience";
 import Education from "./Education";
 import CVdetails from "./CVdetails";
-import { useState } from "react";
 import CVexperience from "./CVexperience";
 import CVeducation from "./CVeducation";
+import { useState } from "react";
+import { createRoot } from "react-dom/client";
 
 function Body() {
-  const [numberFormVisible, setNumberFormVisible] = useState(1);
+  const [numberFormVisible, setNumberFormVisible] = useState(2 /*1*/);
   const toggleForm = (arg) => {
-    arg === numberFormVisible ? setNumberFormVisible(0) : setNumberFormVisible(arg);    
+    arg === numberFormVisible
+      ? setNumberFormVisible(0)
+      : setNumberFormVisible(arg);
   };
 
   const [input, setInput] = useState({
@@ -47,7 +50,22 @@ function Body() {
       },
     }));
     console.log(input);
-  }
+  };
+
+  const experienceNewInstance = (e) => {
+    e.preventDefault();
+    const container = document.querySelector(".experience-instance1");
+    const root = createRoot(container);
+    root.render(
+      <Experience
+        toggleForm={toggleForm}
+        numberFormVisible={numberFormVisible}
+        handleInputChange={handleInputChange}
+        input={input}
+        experienceNewInstance={experienceNewInstance}
+      />
+    );
+  };
 
   return (
     <>
@@ -64,6 +82,7 @@ function Body() {
           numberFormVisible={numberFormVisible}
           handleInputChange={handleInputChange}
           input={input}
+          experienceNewInstance={experienceNewInstance}
         />
 
         <Education

@@ -1,6 +1,11 @@
 import "../styles/Education.css";
 
-function Education({ toggleForm, numberFormVisible, handleInputChange, input }) {
+function Education({
+  toggleForm,
+  numberFormVisible,
+  handleInputChange,
+  input,
+}) {
   return (
     <div className="education">
       <div className="inputs-heading">
@@ -59,7 +64,7 @@ function Education({ toggleForm, numberFormVisible, handleInputChange, input }) 
             handleInputChange("education", "location", e.target.value)
           }
         />
-      <button className="add-education">+ Education</button>
+        <button className="add-education">+ Education</button>
       </form>
     </div>
   );

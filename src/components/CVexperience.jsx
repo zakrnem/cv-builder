@@ -13,7 +13,9 @@ function CVexperience({
       <h3>Professional Experience</h3>
       <div className="cv-experience-container">
         <div className="date-location">
-          <p>{startDate} - {endDate}</p>
+          <p>
+            {startDate} - {endDate}
+          </p>
           <p>{location}</p>
         </div>
         <div className="job-details">

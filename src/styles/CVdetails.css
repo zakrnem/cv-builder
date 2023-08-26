@@ -28,5 +28,5 @@
 .cv-details > * > .icon {
   margin-right: 0.25rem;
   height: 1rem;
-  filter: var(--light-filter)
+  filter: var(--light-filter);
 }
