@@ -2,6 +2,7 @@ import AddInstanceButton from "./AddInstanceButton";
 import ExperienceForm from "./ExperienceForm";
 import InputGroupHeading from "./InputGroupHeading";
 import InstanceHeading from "./InstanceHeading";
+import { useState } from "react";
 
 function Experience({
   toggleGroup,
@@ -10,9 +11,11 @@ function Experience({
   input,
   experienceNewInstance,
 }) {
+  const [isFormVisible, setIsFormVisible] = useState(false);
   const handleEditClick = () => {
-    console.log("Edit experience");
+    setIsFormVisible((prevIsFormVisible) => !prevIsFormVisible);
   };
+
   return (
     <div className="experience">
       <InputGroupHeading
@@ -24,17 +27,17 @@ function Experience({
         title={input.experience.company}
         handleEditClick={handleEditClick}
         numberGroupVisible={numberGroupVisible}
+        isFormVisible={isFormVisible}
       />
-      {/* <ExperienceForm
-        toggleForm={toggleForm}
-        numberFormVisible={numberFormVisible}
+      <ExperienceForm
+        isFormVisible={isFormVisible}
         handleInputChange={handleInputChange}
         input={input}
-        experienceNewInstance={experienceNewInstance}
-      /> */}
+      />
       <AddInstanceButton
         experienceNewInstance={experienceNewInstance}
         numberGroupVisible={numberGroupVisible}
+        isFormVisible={isFormVisible}
       />
     </div>
   );

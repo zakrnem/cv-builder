@@ -1,14 +1,8 @@
 import "../styles/Experience.css";
 
-function ExperienceForm({
-  toggleForm,
-  numberFormVisible,
-  handleInputChange,
-  input,
-  experienceNewInstance,
-}) {
+function ExperienceForm({ isFormVisible, handleInputChange, input }) {
   return (
-    <form style={{ display: numberFormVisible === 2 ? "" : "none" }}>
+    <form style={{ display: isFormVisible ? "" : "none" }}>
       <label htmlFor="companyName">Company Name</label>
       <input
         type="text"

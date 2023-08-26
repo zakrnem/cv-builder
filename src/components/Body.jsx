@@ -54,7 +54,7 @@ function Body() {
   return (
     <>
       <div className="inputs-container">
-       {/*  <PersonalDetails
+        {/*  <PersonalDetails
           toggleForm={toggleForm}
           numberFormVisible={numberFormVisible}
           handleInputChange={handleInputChange}
@@ -68,7 +68,7 @@ function Body() {
           input={input}
         />
 
-       {/*  <Education
+        {/*  <Education
           toggleForm={toggleForm}
           numberFormVisible={numberFormVisible}
           handleInputChange={handleInputChange}
