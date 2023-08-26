@@ -1,4 +1,4 @@
-function AddInstanceButton({experienceNewInstance}) {
+function AddInstanceButton({ experienceNewInstance }) {
   return (
     <button className="add-experience" onClick={experienceNewInstance}>
       + Experience
@@ -6,4 +6,4 @@ function AddInstanceButton({experienceNewInstance}) {
   );
 }
 
-export default AddInstanceButton
+export default AddInstanceButton;

@@ -16,6 +16,7 @@
 
 .inputs-heading > h2 {
   margin: 0;
+  margin-bottom: 0.75rem;
 }
 
 .inputs-heading > button > img {
@@ -39,4 +40,16 @@
   padding: 0.5rem 0.6rem;
   border-radius: 0.6rem;
   border: none;
+}
+
+.instance-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-top: 5px solid var(--grey);
+  border-bottom: 5px solid var(--grey);
+}
+
+.instance-heading > h3 {
+  margin: 0;
 }
