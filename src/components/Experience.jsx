@@ -15,6 +15,14 @@ function Experience({
   const handleEditClick = () => {
     setIsFormVisible((prevIsFormVisible) => !prevIsFormVisible);
   };
+  const handleFormReturn = (e) => {
+    e.preventDefault()
+    handleEditClick()
+  }
+  const handleFormDelete = (e) => {
+    e.preventDefault()
+    console.log('Delete form')
+  }
 
   return (
     <div className="experience">
@@ -33,6 +41,8 @@ function Experience({
         isFormVisible={isFormVisible}
         handleInputChange={handleInputChange}
         input={input}
+        handleFormReturn={handleFormReturn}
+        handleFormDelete={handleFormDelete}
       />
       <AddInstanceButton
         experienceNewInstance={experienceNewInstance}

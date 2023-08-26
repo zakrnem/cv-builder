@@ -1,6 +1,6 @@
 import "../styles/Experience.css";
 
-function ExperienceForm({ isFormVisible, handleInputChange, input }) {
+function ExperienceForm({ isFormVisible, handleInputChange, input, handleFormReturn, handleFormDelete }) {
   return (
     <form style={{ display: isFormVisible ? "" : "none" }}>
       <label htmlFor="companyName">Company Name</label>
@@ -55,6 +55,10 @@ function ExperienceForm({ isFormVisible, handleInputChange, input }) {
           handleInputChange("experience", "description", e.target.value)
         }
       />
+      <div className="form-buttons">
+      <button onClick={handleFormDelete}>Delete</button>
+        <button onClick={handleFormReturn}>Back</button>
+      </div>
     </form>
   );
 }

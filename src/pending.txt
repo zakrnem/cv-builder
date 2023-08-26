@@ -1,24 +1,4 @@
 Add multiple jobs & education button.
 
-    The optimal way to implement this is not showing the "Education" & "Experience" forms initially
-        when pressing the "toggle" button. But instead make the user press the "Add experience" button
-        to show the form. This form will have a "save" button, when it's pressed the form will be
-        hidden and a new div with the heading of the job or education will be shown, just like rendering
-        a list. This heading will have the title, and a "edit" button.
-
-
-    One way to accomplish this is adding the desired components into the function return
-        but with conditional rendering that toggles when the user presses the "Add more button".
-
-    The other way is to create a function that creates the desired "Input Group" 
-        for Personal Details, Experience and Education taking the variables as props, that
-        would be stored in a object.
-    But storing the data for the forms could get very complex, it would be multiple levels of
-        indentation of the object.
-    On the higher order once the "constructor" function is created we could create an object that
-        stores the state of the part of the DOM where the inputs are managed.
-    We would iterate on this object with the "map" method.
-    This would allow us to insert more "Input Group" if needed.
-    
 Clear resume/load example buttons.
 Implement form validation and help messages.

@@ -53,3 +53,10 @@
 .instance-heading > h3 {
   margin: 0;
 }
+
+.form-buttons {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
