@@ -3,15 +3,6 @@
   padding: 1.5rem 2rem;
 }
 
-.experience > form {
-  margin-top: 1rem;
-  display: grid;
-}
-
-.experience > form > label {
-  text-align: start;
-}
-
 .add-experience {
   margin-top: 1.5rem;
   width: fit-content;
@@ -29,4 +20,52 @@
 .add-experience:active {
   color: white;
   background-color: black;
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputs-container > * {
+  width: 40ch;
+  background-color: var(--white);
+}
+
+.inputs-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputs-heading > h2 {
+  margin: 0;
+  margin-bottom: 0.75rem;
+}
+
+.inputs-heading > button > img {
+  height: 1.5rem;
+  filter: invert(15%) sepia(48%) saturate(534%) hue-rotate(167deg)
+    brightness(103%) contrast(91%);
+}
+
+.inputs-heading > button {
+  background: none;
+  border: none;
+}
+
+.inputs-heading > button:hover {
+  opacity: 0.8;
+}
+
+.instance-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-top: 5px solid var(--grey);
+  border-bottom: 5px solid var(--grey);
+}
+
+.instance-heading > h3 {
+  margin: 0;
 }

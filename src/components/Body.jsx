@@ -1,4 +1,3 @@
-import "../styles/InputsContainer.css";
 import "../styles/CVcontainer.css";
 import PersonalDetails from "./PersonalDetails";
 import Experience from "./Experience";
@@ -63,7 +62,16 @@ function Body() {
       description:
         "Experienced and diligent Janitorial Services Specialist with a proven track record of maintaining clean and organized environments. Adept at performing various cleaning tasks, adhering to safety protocols, and contributing to a positive team atmosphere. Possesses excellent attention to detail and the ability to work independently. Seeking to leverage skills and experience[experienceInstances[0]] in providing exceptional janitorial services.",
     },
-  })
+    2: {
+      company: "Apple Inc",
+      position: "Custodian",
+      startDate: "2001-09",
+      endDate: "2011-08",
+      location: "California",
+      description:
+        "Diligent and experienced Custodian with a proven track record of maintaining cleanliness and orderliness in various settings. Adept at performing a range of custodial tasks to ensure the upkeep and functionality of facilities. Strong attention to detail and a commitment to creating a safe and pleasant environment for occupants.",
+    },
+  });
   const handleExperienceInputChange = (index, field, value) => {
     setInput((prevExperienceInput) => ({
       ...prevExperienceInput,
@@ -82,8 +90,8 @@ function Body() {
   //will be used to store data on the input object.
 
   const handleNewExperience = () => {
-    console.log('New experience[experienceInstances[0]]')
-  }
+    console.log("New experience[experienceInstances[0]]");
+  };
 
   //console.log(experienceInput[1]);
   return (

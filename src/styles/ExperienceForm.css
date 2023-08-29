@@ -1,0 +1,23 @@
+.experience > div > form {
+  margin-top: 1rem;
+  display: grid;
+}
+
+.experience > div > form > label {
+  text-align: start;
+}
+
+.inputs-container > * > div > form > input {
+  background-color: var(--grey);
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.6rem;
+  border: none;
+}
+
+.form-buttons {
+    margin-top: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }

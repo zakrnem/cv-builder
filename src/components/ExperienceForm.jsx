@@ -1,4 +1,4 @@
-import "../styles/Experience.css";
+import "../styles/ExperienceForm.css";
 
 function ExperienceForm({
   isFormVisible,
@@ -16,7 +16,11 @@ function ExperienceForm({
         value={experienceInput.company}
         placeholder="Your employer's name"
         onChange={(e) =>
-          handleExperienceInputChange(experienceInstance, "company", e.target.value)
+          handleExperienceInputChange(
+            experienceInstance,
+            "company",
+            e.target.value
+          )
         }
       />
       <label htmlFor="positionTitle">Position Title</label>
@@ -25,7 +29,11 @@ function ExperienceForm({
         value={experienceInput.position}
         placeholder="Enter your role"
         onChange={(e) =>
-          handleExperienceInputChange(experienceInstance, "position", e.target.value)
+          handleExperienceInputChange(
+            experienceInstance,
+            "position",
+            e.target.value
+          )
         }
       />
       <label htmlFor="startDate">Start Date</label>
@@ -33,7 +41,11 @@ function ExperienceForm({
         type="month"
         value={experienceInput.startDate}
         onChange={(e) =>
-          handleExperienceInputChange(experienceInstance, "startDate", e.target.value)
+          handleExperienceInputChange(
+            experienceInstance,
+            "startDate",
+            e.target.value
+          )
         }
       />
       <label htmlFor="endDate">End Date</label>
@@ -41,7 +53,11 @@ function ExperienceForm({
         type="month"
         value={experienceInput.endDate}
         onChange={(e) =>
-          handleExperienceInputChange(experienceInstance, "endDate", e.target.value)
+          handleExperienceInputChange(
+            experienceInstance,
+            "endDate",
+            e.target.value
+          )
         }
       />
       <label htmlFor="location">Location</label>
@@ -50,7 +66,11 @@ function ExperienceForm({
         value={experienceInput.location}
         placeholder="Type a landmark, city, or address"
         onChange={(e) =>
-          handleExperienceInputChange(experienceInstance, "location", e.target.value)
+          handleExperienceInputChange(
+            experienceInstance,
+            "location",
+            e.target.value
+          )
         }
       />
       <label htmlFor="description">Description</label>
@@ -59,7 +79,11 @@ function ExperienceForm({
         rows={4}
         className="experience-description"
         onChange={(e) =>
-          handleExperienceInputChange(experienceInstance, "description", e.target.value)
+          handleExperienceInputChange(
+            experienceInstance,
+            "description",
+            e.target.value
+          )
         }
       />
       <div className="form-buttons">
