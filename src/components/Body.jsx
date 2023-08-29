@@ -122,12 +122,7 @@ function Body() {
           />
 
           <CVexperience
-            company={experienceInput[1].company}
-            position={experienceInput[1].position}
-            startDate={experienceInput[1].startDate}
-            endDate={experienceInput[1].endDate}
-            location={experienceInput[1].location}
-            description={experienceInput[1].description}
+            experienceInput={experienceInput}
           />
 
           <CVeducation
