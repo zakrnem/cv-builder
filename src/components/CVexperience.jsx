@@ -1,5 +1,5 @@
 import "../styles/CVexperience.css";
-import CVexperienceContainer from "./CVexperienceContainer";
+import CVexperienceInstance from "./CVexperienceInstance";
 
 function CVexperience({ experienceInput }) {
   return (
@@ -9,18 +9,17 @@ function CVexperience({ experienceInput }) {
         const experience = experienceInput[index];
         return (
           <div key={experience.key}>
-            <CVexperienceContainer
+            <CVexperienceInstance
               company={experience.company}
               position={experience.position}
               startDate={experience.startDate}
               endDate={experience.endDate}
               location={experience.location}
-              description={experience.description} 
+              description={experience.description}
             />
           </div>
         );
       })}
-      
     </div>
   );
 }

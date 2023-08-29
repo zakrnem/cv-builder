@@ -65,7 +65,6 @@ function Body() {
     },
   });
   const handleExperienceInputChange = (index, field, value) => {
-    //console.log(index)
     setExperienceInput((prevExperienceInput) => ({
       ...prevExperienceInput,
       [index]: {
@@ -76,12 +75,49 @@ function Body() {
   };
   const [experienceInstances, setExperienceInstances] = useState([1, 2]);
 
+  const handleNewExperience = () => {
+    console.log("New experiece");
+  };
+
   useEffect(() => {
     console.log(experienceInput);
   }, [experienceInput]);
 
-  const handleNewExperience = () => {
-    console.log("New experience[experienceInstances[0]]");
+  const [educationInput, setEducationInput] = useState({
+    1: {
+      school: "Ken's High School",
+      degree: "High School Diploma",
+      startDate: "1985-01",
+      endDate: "2000-04",
+      location: "Monte Carlo",
+      key: uuidv4(),
+    },
+    2: {
+      school: "Thomas Tech School",
+      degree: "Cleaning Technician",
+      startDate: "2000-08",
+      endDate: "2001-04",
+      location: "Kuala Lumpur",
+      key: uuidv4(),
+    },
+  });
+  const handleEducationInputChange = (index, field, value) => {
+    setEducationInput((prevEducationInput) => ({
+      ...prevEducationInput,
+      [index]: {
+        ...prevEducationInput[index],
+        [field]: value,
+      },
+    }));
+  };
+  const [educationInstances, setEducationInstances] = useState([1, 2]);
+
+  useEffect(() => {
+    console.log(educationInput);
+  }, [educationInput]);
+
+  const handleNewEducation = () => {
+    console.log("New education");
   };
 
   //console.log(experienceInput[1]);
@@ -121,17 +157,9 @@ function Body() {
             location={input.details.location}
           />
 
-          <CVexperience
-            experienceInput={experienceInput}
-          />
+          <CVexperience experienceInput={experienceInput} />
 
-          <CVeducation
-            school={input.education.school}
-            degree={input.education.degree}
-            startDate={input.education.startDate}
-            endDate={input.education.endDate}
-            location={input.education.location}
-          />
+          <CVeducation educationInput={educationInput} />
         </div>
       </div>
     </>

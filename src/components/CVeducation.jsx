@@ -1,21 +1,24 @@
 import "../styles/CVeducation.css";
+import CVeducationInstance from "./CVeducationInstance";
 
-function CVeducation({ school, degree, startDate, endDate, location }) {
+function CVeducation({ educationInput }) {
   return (
     <div className="cv-education">
       <h3>Education</h3>
-      <div className="cv-education-container">
-        <div className="date-location">
-          <p>
-            {startDate} - {endDate}
-          </p>
-          <p>{location}</p>
-        </div>
-        <div className="school-degree">
-          <p>{school}</p>
-          <p>{degree}</p>
-        </div>
-      </div>
+      {Object.keys(educationInput).map((index) => {
+        const education = educationInput[index];
+        return (
+          <div key={education.key}>
+            <CVeducationInstance
+              school={education.school}
+              degree={education.degree}
+              startDate={education.startDate}
+              endDate={education.endDate}
+              location={education.location}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }
