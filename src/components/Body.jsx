@@ -1,6 +1,6 @@
 import "../styles/CVcontainer.css";
 import PersonalDetails from "./PersonalDetails";
-import Experience from "./Experience";
+import InputExperience from "./InputExperience";
 import Education from "./Education";
 import CVdetails from "./CVdetails";
 import CVexperience from "./CVexperience";
@@ -95,7 +95,7 @@ function Body() {
           input={input}
         /> */}
 
-        <Experience
+        <InputExperience
           toggleGroup={toggleGroup}
           numberGroupVisible={numberGroupVisible}
           handleExperienceInputChange={handleExperienceInputChange}

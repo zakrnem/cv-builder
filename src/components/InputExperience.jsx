@@ -2,11 +2,10 @@ import AddInstanceButton from "./AddInstanceButton";
 import ExperienceForm from "./ExperienceForm";
 import InputGroupHeading from "./InputGroupHeading";
 import InstanceHeading from "./InstanceHeading";
-import "../styles/Experience.css";
+import "../styles/InputExperience.css";
 import { useState } from "react";
 
-
-function Experience({
+function InputExperience({
   toggleGroup,
   numberGroupVisible,
   handleExperienceInputChange,
@@ -50,7 +49,7 @@ function Experience({
               experienceInput={experience}
               handleFormReturn={handleFormReturn}
               handleFormDelete={handleFormDelete}
-              experienceInstance={experienceInstances[index-1]}
+              experienceInstance={experienceInstances[index - 1]}
             />
           </div>
         );
@@ -65,4 +64,4 @@ function Experience({
   );
 }
 
-export default Experience;
+export default InputExperience;
