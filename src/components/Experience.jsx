@@ -4,7 +4,7 @@ import InputGroupHeading from "./InputGroupHeading";
 import InstanceHeading from "./InstanceHeading";
 import "../styles/Experience.css";
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+
 
 function Experience({
   toggleGroup,
@@ -27,8 +27,6 @@ function Experience({
     console.log("Delete form");
   };
 
-  //console.log(experienceInstances[0])
-  //console.log(experienceInput[experienceInstances[0]])
   return (
     <div className="experience">
       <InputGroupHeading
@@ -38,10 +36,8 @@ function Experience({
       />
       {Object.keys(experienceInput).map((index) => {
         const experience = experienceInput[index];
-        const uniqueKey = uuidv4();
-
         return (
-          <div key={uniqueKey}>
+          <div key={experience.key}>
             <InstanceHeading
               title={experience.company}
               handleEditClick={handleEditClick}
@@ -50,11 +46,11 @@ function Experience({
             />
             <ExperienceForm
               isFormVisible={isFormVisible}
-              handleInputChange={handleExperienceInputChange}
+              handleExperienceInputChange={handleExperienceInputChange}
               experienceInput={experience}
               handleFormReturn={handleFormReturn}
               handleFormDelete={handleFormDelete}
-              experienceInstance={index}
+              experienceInstance={experienceInstances[index-1]}
             />
           </div>
         );

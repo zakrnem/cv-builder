@@ -5,7 +5,8 @@ import Education from "./Education";
 import CVdetails from "./CVdetails";
 import CVexperience from "./CVexperience";
 import CVeducation from "./CVeducation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function Body() {
   const [numberGroupVisible, setNumberGroupVisible] = useState(2);
@@ -21,17 +22,6 @@ function Body() {
       email: "email@email.com",
       phone: "123-456-7890",
       location: "Sri Lanka",
-    },
-    experience: {
-      1: {
-        company: "Umbrella Inc",
-        position: "Janitor",
-        startDate: "2021-06",
-        endDate: "2023-08",
-        location: "Qatar",
-        description:
-          "Experienced and diligent Janitorial Services Specialist with a proven track record of maintaining clean and organized environments. Adept at performing various cleaning tasks, adhering to safety protocols, and contributing to a positive team atmosphere. Possesses excellent attention to detail and the ability to work independently. Seeking to leverage skills and experience[experienceInstances[0]] in providing exceptional janitorial services.",
-      },
     },
     education: {
       school: "Ken's High School",
@@ -60,7 +50,8 @@ function Body() {
       endDate: "2023-08",
       location: "Qatar",
       description:
-        "Experienced and diligent Janitorial Services Specialist with a proven track record of maintaining clean and organized environments. Adept at performing various cleaning tasks, adhering to safety protocols, and contributing to a positive team atmosphere. Possesses excellent attention to detail and the ability to work independently. Seeking to leverage skills and experience[experienceInstances[0]] in providing exceptional janitorial services.",
+        "Experienced and diligent Janitorial Services Specialist with a proven track record of maintaining clean and organized environments. Adept at performing various cleaning tasks, adhering to safety protocols, and contributing to a positive team atmosphere. Possesses excellent attention to detail and the ability to work independently. Seeking to leverage skills and experience in providing exceptional janitorial services.",
+      key: uuidv4(),
     },
     2: {
       company: "Apple Inc",
@@ -70,24 +61,24 @@ function Body() {
       location: "California",
       description:
         "Diligent and experienced Custodian with a proven track record of maintaining cleanliness and orderliness in various settings. Adept at performing a range of custodial tasks to ensure the upkeep and functionality of facilities. Strong attention to detail and a commitment to creating a safe and pleasant environment for occupants.",
+      key: uuidv4(),
     },
   });
   const handleExperienceInputChange = (index, field, value) => {
-    setInput((prevExperienceInput) => ({
+    //console.log(index)
+    setExperienceInput((prevExperienceInput) => ({
       ...prevExperienceInput,
       [index]: {
         ...prevExperienceInput[index],
         [field]: value,
       },
     }));
-    console.log(experienceInput);
   };
+  const [experienceInstances, setExperienceInstances] = useState([1, 2]);
 
-  const [experienceInstances, setExperienceInstances] = useState([1]);
-  //Create an array with just the indexes of the instances
-  //and use it to create more identations on the input object.
-  //The add experience[experienceInstances[0]] button will push indexes, and this index
-  //will be used to store data on the input object.
+  useEffect(() => {
+    console.log(experienceInput);
+  }, [experienceInput]);
 
   const handleNewExperience = () => {
     console.log("New experience[experienceInstances[0]]");
@@ -109,8 +100,8 @@ function Body() {
           numberGroupVisible={numberGroupVisible}
           handleExperienceInputChange={handleExperienceInputChange}
           experienceInput={experienceInput}
-          experienceInstances={experienceInstances}
           handleNewExperience={handleNewExperience}
+          experienceInstances={experienceInstances}
         />
 
         {/*  <Education
@@ -131,12 +122,12 @@ function Body() {
           />
 
           <CVexperience
-            company={input.experience[experienceInstances[0]].company}
-            position={input.experience[experienceInstances[0]].position}
-            startDate={input.experience[experienceInstances[0]].startDate}
-            endDate={input.experience[experienceInstances[0]].endDate}
-            location={input.experience[experienceInstances[0]].location}
-            description={input.experience[experienceInstances[0]].description}
+            company={experienceInput[1].company}
+            position={experienceInput[1].position}
+            startDate={experienceInput[1].startDate}
+            endDate={experienceInput[1].endDate}
+            location={experienceInput[1].location}
+            description={experienceInput[1].description}
           />
 
           <CVeducation
