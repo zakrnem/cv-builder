@@ -24,13 +24,15 @@ function Body() {
       location: "Sri Lanka",
     },
     experience: {
-      company: "Umbrella Inc",
-      position: "Janitor",
-      startDate: "2021-06",
-      endDate: "2023-08",
-      location: "Qatar",
-      description:
-        "Experienced and diligent Janitorial Services Specialist with a proven track record of maintaining clean and organized environments. Adept at performing various cleaning tasks, adhering to safety protocols, and contributing to a positive team atmosphere. Possesses excellent attention to detail and the ability to work independently. Seeking to leverage skills and experience in providing exceptional janitorial services.",
+      1: {
+        company: "Umbrella Inc",
+        position: "Janitor",
+        startDate: "2021-06",
+        endDate: "2023-08",
+        location: "Qatar",
+        description:
+          "Experienced and diligent Janitorial Services Specialist with a proven track record of maintaining clean and organized environments. Adept at performing various cleaning tasks, adhering to safety protocols, and contributing to a positive team atmosphere. Possesses excellent attention to detail and the ability to work independently. Seeking to leverage skills and experience[experienceInstances[0]] in providing exceptional janitorial services.",
+      },
     },
     education: {
       school: "Ken's High School",
@@ -51,6 +53,39 @@ function Body() {
     console.log(input);
   };
 
+  const [experienceInput, setExperienceInput] = useState({
+    1: {
+      company: "Umbrella Inc",
+      position: "Janitor",
+      startDate: "2021-06",
+      endDate: "2023-08",
+      location: "Qatar",
+      description:
+        "Experienced and diligent Janitorial Services Specialist with a proven track record of maintaining clean and organized environments. Adept at performing various cleaning tasks, adhering to safety protocols, and contributing to a positive team atmosphere. Possesses excellent attention to detail and the ability to work independently. Seeking to leverage skills and experience[experienceInstances[0]] in providing exceptional janitorial services.",
+    },
+  })
+  const handleExperienceInputChange = (index, field, value) => {
+    setInput((prevExperienceInput) => ({
+      ...prevExperienceInput,
+      [index]: {
+        ...prevExperienceInput[index],
+        [field]: value,
+      },
+    }));
+    console.log(experienceInput);
+  };
+
+  const [experienceInstances, setExperienceInstances] = useState([1]);
+  //Create an array with just the indexes of the instances
+  //and use it to create more identations on the input object.
+  //The add experience[experienceInstances[0]] button will push indexes, and this index
+  //will be used to store data on the input object.
+
+  const handleNewExperience = () => {
+    console.log('New experience[experienceInstances[0]]')
+  }
+
+  //console.log(experienceInput[1]);
   return (
     <>
       <div className="inputs-container">
@@ -64,8 +99,10 @@ function Body() {
         <Experience
           toggleGroup={toggleGroup}
           numberGroupVisible={numberGroupVisible}
-          handleInputChange={handleInputChange}
-          input={input}
+          handleExperienceInputChange={handleExperienceInputChange}
+          experienceInput={experienceInput}
+          experienceInstances={experienceInstances}
+          handleNewExperience={handleNewExperience}
         />
 
         {/*  <Education
@@ -86,12 +123,12 @@ function Body() {
           />
 
           <CVexperience
-            company={input.experience.company}
-            position={input.experience.position}
-            startDate={input.experience.startDate}
-            endDate={input.experience.endDate}
-            location={input.experience.location}
-            description={input.experience.description}
+            company={input.experience[experienceInstances[0]].company}
+            position={input.experience[experienceInstances[0]].position}
+            startDate={input.experience[experienceInstances[0]].startDate}
+            endDate={input.experience[experienceInstances[0]].endDate}
+            location={input.experience[experienceInstances[0]].location}
+            description={input.experience[experienceInstances[0]].description}
           />
 
           <CVeducation

@@ -1,13 +1,15 @@
 function AddInstanceButton({
-  experienceNewInstance,
+  handleNewExperience,
   numberGroupVisible,
   isFormVisible,
 }) {
   return (
     <button
       className="add-experience"
-      onClick={experienceNewInstance}
-      style={{ display: numberGroupVisible === 2 && !isFormVisible ? "" : "none" }}
+      onClick={handleNewExperience}
+      style={{
+        display: numberGroupVisible === 2 && !isFormVisible ? "" : "none",
+      }}
     >
       + Experience
     </button>

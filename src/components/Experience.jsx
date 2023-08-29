@@ -7,23 +7,27 @@ import { useState } from "react";
 function Experience({
   toggleGroup,
   numberGroupVisible,
-  handleInputChange,
-  input,
-  experienceNewInstance,
+  handleExperienceInputChange,
+  experienceInput,
+  handleNewExperience,
+  experienceInstances,
 }) {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const handleEditClick = () => {
     setIsFormVisible((prevIsFormVisible) => !prevIsFormVisible);
   };
   const handleFormReturn = (e) => {
-    e.preventDefault()
-    handleEditClick()
-  }
+    e.preventDefault();
+    handleEditClick();
+  };
   const handleFormDelete = (e) => {
-    e.preventDefault()
-    console.log('Delete form')
-  }
+    e.preventDefault();
+    console.log("Delete form");
+  };
+  const title = experienceInput[experienceInstances[0]].company
 
+  //console.log(experienceInstances[0])
+  //console.log(experienceInput[experienceInstances[0]])
   return (
     <div className="experience">
       <InputGroupHeading
@@ -32,20 +36,21 @@ function Experience({
         numberGroupVisible={numberGroupVisible}
       />
       <InstanceHeading
-        title={input.experience.company}
+        title={title}
         handleEditClick={handleEditClick}
         numberGroupVisible={numberGroupVisible}
         isFormVisible={isFormVisible}
       />
       <ExperienceForm
         isFormVisible={isFormVisible}
-        handleInputChange={handleInputChange}
-        input={input}
+        handleInputChange={handleExperienceInputChange}
+        experienceInput={experienceInput[experienceInstances[0]]}
         handleFormReturn={handleFormReturn}
         handleFormDelete={handleFormDelete}
+        experienceInstance={experienceInstances[0]}
       />
       <AddInstanceButton
-        experienceNewInstance={experienceNewInstance}
+        handleNewExperience={handleNewExperience}
         numberGroupVisible={numberGroupVisible}
         isFormVisible={isFormVisible}
       />
