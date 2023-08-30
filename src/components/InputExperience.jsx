@@ -17,6 +17,7 @@ function InputExperience({
   const handleEditClick = () => {
     setIsFormVisible((prevIsFormVisible) => !prevIsFormVisible);
   };
+
   const handleFormReturn = (e) => {
     e.preventDefault();
     handleEditClick();

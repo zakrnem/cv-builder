@@ -1,0 +1,8 @@
+.education > div > form {
+    margin-top: 1rem;
+    display: grid;
+  }
+  
+  .education > div > form > label {
+    text-align: start;
+  }

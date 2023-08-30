@@ -72,9 +72,9 @@ function Body() {
     console.log("New experiece");
   };
 
-  useEffect(() => {
+  /* useEffect(() => {
     console.log(experienceInput);
-  }, [experienceInput]);
+  }, [experienceInput]); */
 
   const [educationInput, setEducationInput] = useState({
     1: {
@@ -105,9 +105,9 @@ function Body() {
   };
   const [educationInstances, setEducationInstances] = useState([1, 2]);
 
-  useEffect(() => {
+  /* useEffect(() => {
     console.log(educationInput);
-  }, [educationInput]);
+  }, [educationInput]); */
 
   const handleNewEducation = () => {
     console.log("New education");

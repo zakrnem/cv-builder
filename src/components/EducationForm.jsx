@@ -1,3 +1,5 @@
+import "../styles/EducationForm.css";
+
 function EducationForm({
   isFormVisible,
   handleEducationInputChange,
@@ -7,7 +9,7 @@ function EducationForm({
   educationInstance,
 }) {
   return (
-    <form style={{ display: isFormVisible === 3 ? "" : "none" }}>
+    <form style={{ display: isFormVisible ? "" : "none" }}>
       <label htmlFor="school">School</label>
       <input
         type="text"

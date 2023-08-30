@@ -3,15 +3,6 @@
   padding: 1.5rem 2rem;
 }
 
-.education > form {
-  margin-top: 1rem;
-  display: grid;
-}
-
-.education > form > label {
-  text-align: start;
-}
-
 .add-education {
   margin-top: 1.5rem;
   width: fit-content;
