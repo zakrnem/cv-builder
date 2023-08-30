@@ -1,7 +1,7 @@
 import "../styles/CVcontainer.css";
 import PersonalDetails from "./PersonalDetails";
 import InputExperience from "./InputExperience";
-import Education from "./Education";
+import Education from "./InputEducation";
 import CVdetails from "./CVdetails";
 import CVexperience from "./CVexperience";
 import CVeducation from "./CVeducation";
@@ -22,13 +22,6 @@ function Body() {
       email: "email@email.com",
       phone: "123-456-7890",
       location: "Sri Lanka",
-    },
-    education: {
-      school: "Ken's High School",
-      degree: "High School Diploma",
-      startDate: "1985-01",
-      endDate: "2000-04",
-      location: "Monte Carlo",
     },
   });
   const handleInputChange = (group, field, value) => {
@@ -120,7 +113,6 @@ function Body() {
     console.log("New education");
   };
 
-  //console.log(experienceInput[1]);
   return (
     <>
       <div className="inputs-container">
@@ -140,12 +132,12 @@ function Body() {
           experienceInstances={experienceInstances}
         />
 
-        {/*  <Education
+        <Education
           toggleForm={toggleForm}
           numberFormVisible={numberFormVisible}
           handleInputChange={handleInputChange}
           input={input}
-        /> */}
+        />
       </div>
 
       <div className="cv-sheet">
