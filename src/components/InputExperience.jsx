@@ -64,6 +64,7 @@ function InputExperience({
         handleNewInstance={handleNewExperience}
         numberGroupVisible={numberGroupVisible}
         isFormVisible={isFormVisible}
+        groupIndex={2}
       />
     </div>
   );

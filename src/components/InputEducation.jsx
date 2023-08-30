@@ -62,6 +62,7 @@ function InputEducation({
         handleNewInstance={handleNewEducation}
         numberGroupVisible={numberGroupVisible}
         isFormVisible={isFormVisible}
+        groupIndex={3}
       />
     </div>
   );

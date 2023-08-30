@@ -4,13 +4,14 @@ function AddInstanceButton({
   handleNewInstance,
   numberGroupVisible,
   isFormVisible,
+  groupIndex,
 }) {
   return (
     <button
       className={className}
       onClick={handleNewInstance}
       style={{
-        display: numberGroupVisible === 2 && !isFormVisible ? "" : "none",
+        display: numberGroupVisible === groupIndex && !isFormVisible ? "" : "none",
       }}
     >
       {buttonText}
