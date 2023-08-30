@@ -6,7 +6,7 @@ function InputGroupHeading({ title, toggleGroup, numberGroupVisible, groupIndex 
         onClick={() => toggleGroup(groupIndex)}
         style={{
           transition: "transform 0.3s",
-          transform: numberGroupVisible === {groupIndex} ? "" : "rotate(180deg)",
+          transform: numberGroupVisible === groupIndex ? "" : "rotate(180deg)",
         }}
       >
         <img src="./src/assets/down-svgrepo-com.svg" />
