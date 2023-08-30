@@ -56,7 +56,9 @@ function InputExperience({
       })}
 
       <AddInstanceButton
-        handleNewExperience={handleNewExperience}
+        className={'add-experience'}
+        buttonText={'+ Experience'}
+        handleNewInstance={handleNewExperience}
         numberGroupVisible={numberGroupVisible}
         isFormVisible={isFormVisible}
       />
