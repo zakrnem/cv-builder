@@ -1,7 +1,7 @@
 import "../styles/CVcontainer.css";
 import PersonalDetails from "./PersonalDetails";
 import InputExperience from "./InputExperience";
-import Education from "./InputEducation";
+import InputEducation from "./InputEducation";
 import CVdetails from "./CVdetails";
 import CVexperience from "./CVexperience";
 import CVeducation from "./CVeducation";
@@ -132,11 +132,13 @@ function Body() {
           experienceInstances={experienceInstances}
         />
 
-        <Education
-          toggleForm={toggleForm}
-          numberFormVisible={numberFormVisible}
-          handleInputChange={handleInputChange}
-          input={input}
+        <InputEducation
+          toggleGroup={toggleGroup}
+          numberGroupVisible={numberGroupVisible}
+          handleEducationInputChange={handleEducationInputChange}
+          educationInput={educationInput}
+          handleNewEducation={handleNewEducation}
+          educationInstances={educationInstances}
         />
       </div>
 

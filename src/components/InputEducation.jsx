@@ -1,73 +1,70 @@
-import "../styles/Education.css";
+import AddInstanceButton from "./AddInstanceButton";
+import EducationForm from "./EducationForm";
+import InputGroupHeading from "./InputGroupHeading";
+import InstanceHeading from "./InstanceHeading";
+import "../styles/InputEducation.css";
+import { useState } from "react";
 
-function Education({
-  toggleForm,
-  numberFormVisible,
-  handleInputChange,
-  input,
+function InputEducation({
+  toggleGroup,
+  numberGroupVisible,
+  handleEducationInputChange,
+  educationInput,
+  handleNewEducation,
+  educationInstances,
 }) {
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const handleEditClick = () => {
+    setIsFormVisible((prevIsFormVisible) => !prevIsFormVisible);
+  };
+  const handleFormReturn = (e) => {
+    e.preventDefault();
+    handleEditClick();
+  };
+  const handleFormDelete = (e) => {
+    e.preventDefault();
+    console.log("Delete form");
+  };
   return (
     <div className="education">
-      <div className="inputs-heading">
-        <h2>Education</h2>
-        <button
-          onClick={() => toggleForm(3)}
-          style={{
-            transition: "transform 0.3s",
-            transform: numberFormVisible !== 3 ? "" : "rotate(180deg)",
-          }}
-        >
-          <img src="./src/assets/down-svgrepo-com.svg" />
-        </button>
-      </div>
-      <form style={{ display: numberFormVisible === 3 ? "" : "none" }}>
-        <label htmlFor="school">School</label>
-        <input
-          type="text"
-          value={input.education.school}
-          placeholder="Name of the School"
-          onChange={(e) =>
-            handleInputChange("education", "school", e.target.value)
-          }
-        />
-        <label htmlFor="degree">Degree</label>
-        <input
-          type="text"
-          value={input.education.degree}
-          placeholder="Type your degree"
-          onChange={(e) =>
-            handleInputChange("education", "degree", e.target.value)
-          }
-        />
-        <label htmlFor="startDate">Start Date</label>
-        <input
-          type="month"
-          value={input.education.startDate}
-          onChange={(e) =>
-            handleInputChange("education", "startDate", e.target.value)
-          }
-        />
-        <label htmlFor="endDate">End Date</label>
-        <input
-          type="month"
-          value={input.education.endDate}
-          onChange={(e) =>
-            handleInputChange("education", "endDate", e.target.value)
-          }
-        />
-        <label htmlFor="location">Location</label>
-        <input
-          type="text"
-          value={input.education.location}
-          placeholder="Enter an address"
-          onChange={(e) =>
-            handleInputChange("education", "location", e.target.value)
-          }
-        />
-        <button className="add-education">+ Education</button>
-      </form>
+      <InputGroupHeading
+        title={"Education"}
+        toggleGroup={toggleGroup}
+        numberGroupVisible={numberGroupVisible}
+        groupIndex={3}
+      />
+      {Object.keys(educationInput).map((index) => {
+        const education = educationInput[index];
+        return (
+          <div key={education.key}>
+            <InstanceHeading
+              title={education.school}
+              handleEditClick={handleEditClick}
+              numberGroupVisible={numberGroupVisible}
+              isFormVisible={isFormVisible}
+              groupIndex={3}
+            />
+            <EducationForm
+              isFormVisible={isFormVisible}
+              handleEducationInputChange={handleEducationInputChange}
+              educationInput={education}
+              handleFormReturn={handleFormReturn}
+              handleFormDelete={handleFormDelete}
+              educationInstance={educationInstances[index - 1]}
+            />
+          </div>
+        );
+      })}
+
+      <AddInstanceButton
+        className={'add-education'}
+        buttonText={'+ Education'}
+        handleNewInstance={handleNewEducation}
+        numberGroupVisible={numberGroupVisible}
+        isFormVisible={isFormVisible}
+      />
     </div>
   );
 }
 
-export default Education;
+export default InputEducation;

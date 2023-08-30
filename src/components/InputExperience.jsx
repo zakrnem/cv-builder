@@ -32,6 +32,7 @@ function InputExperience({
         title={"Experience"}
         toggleGroup={toggleGroup}
         numberGroupVisible={numberGroupVisible}
+        groupIndex={2}
       />
       {Object.keys(experienceInput).map((index) => {
         const experience = experienceInput[index];
@@ -42,6 +43,7 @@ function InputExperience({
               handleEditClick={handleEditClick}
               numberGroupVisible={numberGroupVisible}
               isFormVisible={isFormVisible}
+              groupIndex={2}
             />
             <ExperienceForm
               isFormVisible={isFormVisible}
