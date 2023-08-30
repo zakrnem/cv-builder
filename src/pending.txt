@@ -1,4 +1,19 @@
 Add multiple jobs & education button.
+    Show the form of only one instance at a time.
+    Make the "Add instance" button work.
 
 Clear resume/load example buttons.
 Implement form validation and help messages.
+
+
+
+
+<EducationForm
+              numberFormVisible={numberFormVisible}
+              index={index}
+              handleEducationInputChange={handleEducationInputChange}
+              educationInput={education}
+              handleFormReturn={handleFormReturn}
+              handleFormDelete={handleFormDelete}
+              educationInstance={educationInstances[index - 1]}
+            />

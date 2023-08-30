@@ -13,10 +13,16 @@ function InputEducation({
   handleNewEducation,
   educationInstances,
 }) {
-  const [isFormVisible, setIsFormVisible] = useState(false);
-  const handleEditClick = () => {
-    setIsFormVisible((prevIsFormVisible) => !prevIsFormVisible);
+  const [numberFormVisible, setNumberFormVisible] = useState(0);
+  const editForm = (arg) => {
+    arg === numberFormVisible
+      ? setNumberFormVisible(0)
+      : setNumberFormVisible(arg);
   };
+  const handleEditClick = (arg) => {
+    editForm(arg);
+  };
+
   const handleFormReturn = (e) => {
     e.preventDefault();
     handleEditClick();
@@ -35,33 +41,33 @@ function InputEducation({
       />
       {Object.keys(educationInput).map((index) => {
         const education = educationInput[index];
+        const instance = educationInstances[index - 1]
         return (
           <div key={education.key}>
             <InstanceHeading
               title={education.school}
               handleEditClick={handleEditClick}
               numberGroupVisible={numberGroupVisible}
-              isFormVisible={isFormVisible}
               groupIndex={3}
+              educationInstance={instance}
             />
             <EducationForm
-              isFormVisible={isFormVisible}
+              numberFormVisible={numberFormVisible}
+              numberGroupVisible={numberGroupVisible}
               handleEducationInputChange={handleEducationInputChange}
               educationInput={education}
               handleFormReturn={handleFormReturn}
               handleFormDelete={handleFormDelete}
-              educationInstance={educationInstances[index - 1]}
+              educationInstance={instance}
             />
           </div>
         );
       })}
-
       <AddInstanceButton
-        className={'add-education'}
-        buttonText={'+ Education'}
+        className={"add-education"}
+        buttonText={"+ Education"}
         handleNewInstance={handleNewEducation}
         numberGroupVisible={numberGroupVisible}
-        isFormVisible={isFormVisible}
         groupIndex={3}
       />
     </div>

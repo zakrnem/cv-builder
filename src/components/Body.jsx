@@ -9,7 +9,12 @@ import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 function Body() {
-  const [numberGroupVisible, setNumberGroupVisible] = useState(2);
+  const [numberGroupVisible, setNumberGroupVisible] = useState(3);
+
+  useEffect(() => {
+    console.log(numberGroupVisible);
+  }, [numberGroupVisible]);
+
   const toggleGroup = (arg) => {
     arg === numberGroupVisible
       ? setNumberGroupVisible(0)
@@ -123,14 +128,14 @@ function Body() {
           input={input}
         /> */}
 
-        <InputExperience
+        {/* <InputExperience
           toggleGroup={toggleGroup}
           numberGroupVisible={numberGroupVisible}
           handleExperienceInputChange={handleExperienceInputChange}
           experienceInput={experienceInput}
           handleNewExperience={handleNewExperience}
           experienceInstances={experienceInstances}
-        />
+        /> */}
 
         <InputEducation
           toggleGroup={toggleGroup}

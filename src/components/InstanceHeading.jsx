@@ -2,18 +2,21 @@ function InstanceHeading({
   title,
   handleEditClick,
   numberGroupVisible,
-  isFormVisible,
   groupIndex,
+  educationInstance,
 }) {
   return (
     <div
       className="instance-heading"
       style={{
-        display: numberGroupVisible === groupIndex && !isFormVisible ? "" : "none",
+        display:
+          numberGroupVisible === groupIndex
+            ? ""
+            : "none",
       }}
     >
       <h3>{title}</h3>
-      <button onClick={handleEditClick}>Edit</button>
+      <button onClick={() => handleEditClick(educationInstance)}>Edit</button>
     </div>
   );
 }

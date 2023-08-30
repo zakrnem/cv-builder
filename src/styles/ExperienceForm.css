@@ -1,5 +1,5 @@
 .experience > div > form {
-  margin-top: 1rem;
+  margin-bottom: 1.5rem;
   display: grid;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .form-buttons {
-  margin-top: 1.25rem;
+  margin-top: .5rem;
   display: flex;
   justify-content: space-between;
   gap: 0.5rem;

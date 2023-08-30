@@ -1,4 +1,9 @@
-function InputGroupHeading({ title, toggleGroup, numberGroupVisible, groupIndex }) {
+function InputGroupHeading({
+  title,
+  toggleGroup,
+  numberGroupVisible,
+  groupIndex,
+}) {
   return (
     <div className="inputs-heading">
       <h2>{title}</h2>
