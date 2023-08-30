@@ -3,12 +3,13 @@ function InstanceHeading({
   handleEditClick,
   numberGroupVisible,
   isFormVisible,
+  groupIndex,
 }) {
   return (
     <div
       className="instance-heading"
       style={{
-        display: numberGroupVisible === 2 && !isFormVisible ? "" : "none",
+        display: numberGroupVisible === groupIndex && !isFormVisible ? "" : "none",
       }}
     >
       <h3>{title}</h3>
