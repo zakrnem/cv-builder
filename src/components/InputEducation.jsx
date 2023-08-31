@@ -27,15 +27,13 @@ function InputEducation({
   const [numberFormVisible, setNumberFormVisible] = useState(0);
 
   const handleEditClick = (arg) => {
-    arg === numberFormVisible
-      ? setNumberFormVisible(0)
-      : setNumberFormVisible(arg);
+    if (arg !== numberFormVisible) setNumberFormVisible(arg);
   };
 
 
   const handleFormReturn = (e) => {
     e.preventDefault();
-    handleEditClick();
+    setNumberFormVisible(0);
   };
 
   const handleFormDelete = (e) => {

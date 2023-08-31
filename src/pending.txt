@@ -1,5 +1,4 @@
 Add multiple jobs & education button.
-  InputEducation.jsx line 29: Prevent the edit click from allowing the user to exit the "edit dash".
   CVeducation.jsx: Do not display an empty instance.
     Or don't allow to store it in "InputEducation.jsx".
   InputEducation.jsx: Implement "handleFormDelete".
