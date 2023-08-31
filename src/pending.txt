@@ -1,7 +1,6 @@
 Add multiple jobs & education button.
   CVeducation.jsx: Do not display an empty instance.
     Or don't allow to store it in "InputEducation.jsx".
-  InputEducation.jsx: Implement "handleFormDelete".
 
 Clear resume/load example buttons.
 Implement form validation and help messages.

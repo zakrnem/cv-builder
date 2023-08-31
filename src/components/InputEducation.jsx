@@ -30,19 +30,19 @@ function InputEducation({
     if (arg !== numberFormVisible) setNumberFormVisible(arg);
   };
 
-
   const handleFormReturn = (e) => {
     e.preventDefault();
     setNumberFormVisible(0);
   };
 
-  const handleFormDelete = (e) => {
+  const handleFormDelete = (e, educationInstance) => {
     e.preventDefault();
-    console.log("Delete form");
+    const newState = { ...educationInput };
+    delete newState[educationInstance];
+    setEducationInput(newState);
   };
 
   const handleNewEducation = () => {
-    console.log("New education");
     const index =educationInstances.length + 1
     handleEducationInputChange(index, "key", uuidv4());
     setEducationInstances([

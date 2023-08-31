@@ -82,7 +82,7 @@ function EducationForm({
         }
       />
       <div className="form-buttons">
-        <button onClick={handleFormDelete}>Delete</button>
+        <button onClick={(e) => handleFormDelete(e, educationInstance)}>Delete</button>
         <button onClick={handleFormReturn}>Back</button>
       </div>
     </form>
