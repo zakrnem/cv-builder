@@ -11,10 +11,6 @@ import { v4 as uuidv4 } from "uuid";
 function Body() {
   const [numberGroupVisible, setNumberGroupVisible] = useState(3);
 
-  useEffect(() => {
-    console.log(numberGroupVisible);
-  }, [numberGroupVisible]);
-
   const toggleGroup = (arg) => {
     arg === numberGroupVisible
       ? setNumberGroupVisible(0)
@@ -99,24 +95,6 @@ function Body() {
       key: uuidv4(),
     },
   });
-  const handleEducationInputChange = (index, field, value) => {
-    setEducationInput((prevEducationInput) => ({
-      ...prevEducationInput,
-      [index]: {
-        ...prevEducationInput[index],
-        [field]: value,
-      },
-    }));
-  };
-  const [educationInstances, setEducationInstances] = useState([1, 2]);
-
-  /* useEffect(() => {
-    console.log(educationInput);
-  }, [educationInput]); */
-
-  const handleNewEducation = () => {
-    console.log("New education");
-  };
 
   return (
     <>
@@ -140,10 +118,8 @@ function Body() {
         <InputEducation
           toggleGroup={toggleGroup}
           numberGroupVisible={numberGroupVisible}
-          handleEducationInputChange={handleEducationInputChange}
           educationInput={educationInput}
-          handleNewEducation={handleNewEducation}
-          educationInstances={educationInstances}
+          setEducationInput={setEducationInput}
         />
       </div>
 

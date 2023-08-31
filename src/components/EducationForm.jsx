@@ -10,9 +10,14 @@ function EducationForm({
   educationInstance,
 }) {
   return (
-    <form style={{ display: numberFormVisible === educationInstance &&
-    numberGroupVisible !== 0
-    ? "" : "none" }}>
+    <form
+      style={{
+        display:
+          numberFormVisible === educationInstance && numberGroupVisible !== 0
+            ? ""
+            : "none",
+      }}
+    >
       <label htmlFor="school">School</label>
       <input
         type="text"

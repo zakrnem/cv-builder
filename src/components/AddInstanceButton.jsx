@@ -10,10 +10,7 @@ function AddInstanceButton({
       className={className}
       onClick={handleNewInstance}
       style={{
-        display:
-          numberGroupVisible === groupIndex
-            ? ""
-            : "none",
+        display: numberGroupVisible === groupIndex ? "" : "none",
       }}
     >
       {buttonText}

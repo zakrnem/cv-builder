@@ -9,10 +9,7 @@ function InstanceHeading({
     <div
       className="instance-heading"
       style={{
-        display:
-          numberGroupVisible === groupIndex
-            ? ""
-            : "none",
+        display: numberGroupVisible === groupIndex ? "" : "none",
       }}
     >
       <h3>{title}</h3>
