@@ -30,14 +30,35 @@ function InputEducation({
     if (arg !== numberFormVisible) setNumberFormVisible(arg);
   };
 
+  const [educationFormValid, setEducationFormValid] = useState(true);
+
   const handleFormReturn = (e) => {
     e.preventDefault();
-    const currentIndex = Object.keys(educationInput).length
-    const lastInstance = educationInput[currentIndex]
-    const itemsCount = Object.keys(lastInstance).length
-    if (itemsCount > 3) setNumberFormVisible(0);
-    //Enhance input validation by selectively examining only the necessary fields.
-    //Send a message of the input that's missing.
+    const currentIndex = Object.keys(educationInput).length;
+    const lastInstance = educationInput[currentIndex];
+
+    let checkCount = 0;
+    for (let key in lastInstance) {
+      switch (true) {
+        case key === "school":
+          checkCount++;
+          break;
+        case key === "degree":
+          checkCount++;
+          break;
+        case key === "startDate":
+          checkCount++;
+          break;
+        case key === "endDate":
+          checkCount++;
+          break;
+      }
+    }
+    if (checkCount === 4) {
+      setNumberFormVisible(0);
+    } else {
+      setEducationFormValid(false);
+    }
   };
 
   const handleFormDelete = (e, educationInstance) => {
@@ -46,9 +67,11 @@ function InputEducation({
     delete newEducationInput[educationInstance];
     setEducationInput(newEducationInput);
 
-    const instancesArray = Object.keys(educationInstances).map(key => educationInstances[key])
-    const newArray = instancesArray.filter(el => el !== educationInstance)
-    setEducationInstances(newArray)    
+    const instancesArray = Object.keys(educationInstances).map(
+      (key) => educationInstances[key]
+    );
+    const newArray = instancesArray.filter((el) => el !== educationInstance);
+    setEducationInstances(newArray);
   };
 
   const handleNewEducation = () => {
@@ -58,13 +81,13 @@ function InputEducation({
     setNumberFormVisible(index);
   };
 
-    useEffect(() => {
+  /*     useEffect(() => {
     console.log(educationInput);
   }, [educationInput]);
 
   useEffect(() => {
     console.log(educationInstances);
-  }, [educationInstances]);
+  }, [educationInstances]); */
 
   return (
     <div className="education">
@@ -95,6 +118,7 @@ function InputEducation({
               handleFormReturn={handleFormReturn}
               handleFormDelete={handleFormDelete}
               educationInstance={instance}
+              educationFormValid={educationFormValid}
             />
           </div>
         );

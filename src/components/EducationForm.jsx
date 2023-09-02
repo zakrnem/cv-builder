@@ -8,10 +8,8 @@ function EducationForm({
   handleFormReturn,
   handleFormDelete,
   educationInstance,
-}) 
-
-{
-  console.log('edInst: ', educationInstance)
+  educationFormValid,
+}) {
   return (
     <form
       style={{
@@ -21,7 +19,16 @@ function EducationForm({
             : "none",
       }}
     >
-      <label htmlFor="school">School</label>
+      <label htmlFor="school">
+        School{" "}
+        <p
+          className="required-input"
+          style={{ display: educationFormValid ? "none" : "" }}
+        >
+          *Required
+        </p>
+      </label>
+
       <input
         type="text"
         value={educationInput.school}
@@ -34,7 +41,15 @@ function EducationForm({
           )
         }
       />
-      <label htmlFor="degree">Degree</label>
+      <label htmlFor="degree">
+        Degree{" "}
+        <p
+          className="required-input"
+          style={{ display: educationFormValid ? "none" : "" }}
+        >
+          *Required
+        </p>
+      </label>
       <input
         type="text"
         value={educationInput.degree}
@@ -47,7 +62,15 @@ function EducationForm({
           )
         }
       />
-      <label htmlFor="startDate">Start Date</label>
+      <label htmlFor="startDate">
+        Start Date{" "}
+        <p
+          className="required-input"
+          style={{ display: educationFormValid ? "none" : "" }}
+        >
+          *Required
+        </p>
+      </label>
       <input
         type="month"
         value={educationInput.startDate}
@@ -59,7 +82,15 @@ function EducationForm({
           )
         }
       />
-      <label htmlFor="endDate">End Date</label>
+      <label htmlFor="endDate">
+        End Date{" "}
+        <p
+          className="required-input"
+          style={{ display: educationFormValid ? "none" : "" }}
+        >
+          *Required
+        </p>
+      </label>
       <input
         type="month"
         value={educationInput.endDate}
@@ -84,11 +115,19 @@ function EducationForm({
           )
         }
       />
+      <p
+        className="form-validation"
+        style={{ display: educationFormValid ? "none" : "" }}
+      >
+        Please enter all the required inputs.
+      </p>
       <div className="form-buttons">
         <button onClick={(e) => handleFormDelete(e, educationInstance)}>
           Delete
         </button>
-        <button onClick={handleFormReturn}>Back</button>
+        <button type="submit" onClick={handleFormReturn}>
+          Back
+        </button>
       </div>
     </form>
   );
