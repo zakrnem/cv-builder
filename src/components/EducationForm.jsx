@@ -1,12 +1,12 @@
 function EducationForm({
   numberFormVisible,
   numberGroupVisible,
-  handleEducationInputChange,
+  handleInputChange,
   educationInput,
   handleFormReturn,
   handleFormDelete,
   educationInstance,
-  educationFormValid,
+  isFormValid,
 }) {
   return (
     <form
@@ -21,7 +21,7 @@ function EducationForm({
         School{" "}
         <p
           className="required-input"
-          style={{ display: educationFormValid ? "none" : "" }}
+          style={{ display: isFormValid ? "none" : "" }}
         >
           *Required
         </p>
@@ -32,7 +32,7 @@ function EducationForm({
         value={educationInput.school}
         placeholder="Name of the School"
         onChange={(e) =>
-          handleEducationInputChange(
+          handleInputChange(
             educationInstance,
             "school",
             e.target.value
@@ -43,7 +43,7 @@ function EducationForm({
         Degree{" "}
         <p
           className="required-input"
-          style={{ display: educationFormValid ? "none" : "" }}
+          style={{ display: isFormValid ? "none" : "" }}
         >
           *Required
         </p>
@@ -53,7 +53,7 @@ function EducationForm({
         value={educationInput.degree}
         placeholder="Type your degree"
         onChange={(e) =>
-          handleEducationInputChange(
+          handleInputChange(
             educationInstance,
             "degree",
             e.target.value
@@ -64,7 +64,7 @@ function EducationForm({
         Start Date{" "}
         <p
           className="required-input"
-          style={{ display: educationFormValid ? "none" : "" }}
+          style={{ display: isFormValid ? "none" : "" }}
         >
           *Required
         </p>
@@ -73,7 +73,7 @@ function EducationForm({
         type="month"
         value={educationInput.startDate}
         onChange={(e) =>
-          handleEducationInputChange(
+          handleInputChange(
             educationInstance,
             "startDate",
             e.target.value
@@ -84,7 +84,7 @@ function EducationForm({
         End Date{" "}
         <p
           className="required-input"
-          style={{ display: educationFormValid ? "none" : "" }}
+          style={{ display: isFormValid ? "none" : "" }}
         >
           *Required
         </p>
@@ -93,7 +93,7 @@ function EducationForm({
         type="month"
         value={educationInput.endDate}
         onChange={(e) =>
-          handleEducationInputChange(
+          handleInputChange(
             educationInstance,
             "endDate",
             e.target.value
@@ -106,7 +106,7 @@ function EducationForm({
         value={educationInput.location}
         placeholder="Enter an address"
         onChange={(e) =>
-          handleEducationInputChange(
+          handleInputChange(
             educationInstance,
             "location",
             e.target.value
@@ -115,7 +115,7 @@ function EducationForm({
       />
       <p
         className="form-validation"
-        style={{ display: educationFormValid ? "none" : "" }}
+        style={{ display: isFormValid ? "none" : "" }}
       >
         Please enter all the required inputs.
       </p>

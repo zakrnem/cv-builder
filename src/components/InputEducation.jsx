@@ -11,7 +11,7 @@ function InputEducation({
   educationInput,
   setEducationInput,
 }) {
-  const handleEducationInputChange = (index, field, value) => {
+  const handleInputChange = (index, field, value) => {
     setEducationInput((prevEducationInput) => ({
       ...prevEducationInput,
       [index]: {
@@ -31,13 +31,13 @@ function InputEducation({
     }
   };
 
-  const [educationFormValid, setEducationFormValid] = useState(true);
+  const [isFormValid, setIsFormValid] = useState(true);
 
   const handleFormReturn = (e) => {
     e.preventDefault();
     isLastInstanceValid()
       ? setNumberFormVisible(0)
-      : setEducationFormValid(false);
+      : setIsFormValid(false);
   };
 
   const isLastInstanceValid = () => {
@@ -76,12 +76,12 @@ function InputEducation({
     const newArray = instancesArray.filter((el) => el !== educationInstance);
     setEducationInstances(newArray);
 
-    setEducationFormValid(true);
+    setIsFormValid(true);
   };
 
   const handleNewEducation = () => {
     const index = educationInstances.length + 1;
-    handleEducationInputChange(index, "key", uuidv4());
+    handleInputChange(index, "key", uuidv4());
     setEducationInstances([...educationInstances, index]);
     setNumberFormVisible(index);
   };
@@ -118,12 +118,12 @@ function InputEducation({
             <EducationForm
               numberFormVisible={numberFormVisible}
               numberGroupVisible={numberGroupVisible}
-              handleEducationInputChange={handleEducationInputChange}
+              handleInputChange={handleInputChange}
               educationInput={education}
               handleFormReturn={handleFormReturn}
               handleFormDelete={handleFormDelete}
               educationInstance={instance}
-              educationFormValid={educationFormValid}
+              isFormValid={isFormValid}
             />
           </div>
         );
