@@ -8,7 +8,10 @@ function EducationForm({
   handleFormReturn,
   handleFormDelete,
   educationInstance,
-}) {
+}) 
+
+{
+  console.log('edInst: ', educationInstance)
   return (
     <form
       style={{
@@ -82,7 +85,9 @@ function EducationForm({
         }
       />
       <div className="form-buttons">
-        <button onClick={(e) => handleFormDelete(e, educationInstance)}>Delete</button>
+        <button onClick={(e) => handleFormDelete(e, educationInstance)}>
+          Delete
+        </button>
         <button onClick={handleFormReturn}>Back</button>
       </div>
     </form>

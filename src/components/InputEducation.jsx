@@ -32,33 +32,39 @@ function InputEducation({
 
   const handleFormReturn = (e) => {
     e.preventDefault();
-    setNumberFormVisible(0);
+    const currentIndex = Object.keys(educationInput).length
+    const lastInstance = educationInput[currentIndex]
+    const itemsCount = Object.keys(lastInstance).length
+    if (itemsCount > 3) setNumberFormVisible(0);
+    //Enhance input validation by selectively examining only the necessary fields.
+    //Send a message of the input that's missing.
   };
 
   const handleFormDelete = (e, educationInstance) => {
     e.preventDefault();
-    const newState = { ...educationInput };
-    delete newState[educationInstance];
-    setEducationInput(newState);
+    const newEducationInput = { ...educationInput };
+    delete newEducationInput[educationInstance];
+    setEducationInput(newEducationInput);
+
+    const instancesArray = Object.keys(educationInstances).map(key => educationInstances[key])
+    const newArray = instancesArray.filter(el => el !== educationInstance)
+    setEducationInstances(newArray)    
   };
 
   const handleNewEducation = () => {
-    const index =educationInstances.length + 1
+    const index = educationInstances.length + 1;
     handleEducationInputChange(index, "key", uuidv4());
-    setEducationInstances([
-      ...educationInstances,
-      index,
-    ]);
-    setNumberFormVisible(index)
+    setEducationInstances([...educationInstances, index]);
+    setNumberFormVisible(index);
   };
 
-/*   useEffect(() => {
+    useEffect(() => {
     console.log(educationInput);
   }, [educationInput]);
 
   useEffect(() => {
     console.log(educationInstances);
-  }, [educationInstances]); */
+  }, [educationInstances]);
 
   return (
     <div className="education">
@@ -70,7 +76,8 @@ function InputEducation({
       />
       {Object.keys(educationInput).map((index) => {
         const education = educationInput[index];
-        const instance = educationInstances[index - 1];
+        const newIndex = educationInstances.length > 1 ? index - 1 : 0;
+        const instance = educationInstances[newIndex];
         return (
           <div key={education.key}>
             <InstanceHeading
