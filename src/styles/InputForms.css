@@ -1,0 +1,47 @@
+.education > div > form,
+.experience > div > form {
+  margin-bottom: 1.5rem;
+  display: grid;
+}
+
+.education > div > form > label,
+.experience > div > form > label {
+  text-align: start;
+}
+
+.required-input {
+  display: inline;
+  color: red;
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.form-validation {
+  color: red;
+  margin: 0;
+}
+
+.education,
+.experience {
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+}
+
+.add-instance {
+  margin-top: 1.5rem;
+  width: fit-content;
+  justify-self: center;
+  padding: 0.5rem 1rem;
+  border-radius: 1.25rem;
+  background-color: var(--white);
+  border: solid 4px var(--grey);
+}
+
+.add-instance:hover {
+  background-color: #f2f2f2;
+}
+
+.add-instance:active {
+  color: white;
+  background-color: black;
+}

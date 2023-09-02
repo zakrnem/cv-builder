@@ -1,5 +1,4 @@
 function AddInstanceButton({
-  className,
   buttonText,
   handleNewInstance,
   numberGroupVisible,
@@ -7,7 +6,7 @@ function AddInstanceButton({
 }) {
   return (
     <button
-      className={className}
+      className={"add-instance"}
       onClick={handleNewInstance}
       style={{
         display: numberGroupVisible === groupIndex ? "" : "none",

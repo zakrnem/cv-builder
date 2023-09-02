@@ -19,15 +19,3 @@ body {
   padding: 0 var(--horizontal);
   padding-bottom: var(--vertical);
 }
-
-.required-input {
-  display: inline;
-  color: red;
-  margin: 0;
-  font-size: 0.8rem;
-}
-
-.form-validation {
-  color: red;
-  margin: 0;
-}

@@ -1,5 +1,3 @@
-import "../styles/EducationForm.css";
-
 function EducationForm({
   numberFormVisible,
   numberGroupVisible,

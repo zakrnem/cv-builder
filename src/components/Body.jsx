@@ -1,4 +1,5 @@
 import "../styles/CVcontainer.css";
+import "../styles/InputForms.css";
 import PersonalDetails from "./PersonalDetails";
 import InputExperience from "./InputExperience";
 import InputEducation from "./InputEducation";

@@ -2,7 +2,6 @@ import AddInstanceButton from "./AddInstanceButton";
 import EducationForm from "./EducationForm";
 import InputGroupHeading from "./InputGroupHeading";
 import InstanceHeading from "./InstanceHeading";
-import "../styles/InputEducation.css";
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -130,7 +129,6 @@ function InputEducation({
         );
       })}
       <AddInstanceButton
-        className={"add-education"}
         buttonText={"+ Education"}
         handleNewInstance={handleNewEducation}
         numberGroupVisible={numberGroupVisible}
