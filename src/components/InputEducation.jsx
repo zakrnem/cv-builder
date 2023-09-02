@@ -27,13 +27,21 @@ function InputEducation({
   const [numberFormVisible, setNumberFormVisible] = useState(0);
 
   const handleEditClick = (arg) => {
-    if (arg !== numberFormVisible) setNumberFormVisible(arg);
+    if (isLastInstanceValid()) {
+      if (arg !== numberFormVisible) setNumberFormVisible(arg);
+    }
   };
 
   const [educationFormValid, setEducationFormValid] = useState(true);
 
   const handleFormReturn = (e) => {
     e.preventDefault();
+    isLastInstanceValid()
+      ? setNumberFormVisible(0)
+      : setEducationFormValid(false);
+  };
+
+  const isLastInstanceValid = () => {
     const currentIndex = Object.keys(educationInput).length;
     const lastInstance = educationInput[currentIndex];
 
@@ -54,11 +62,7 @@ function InputEducation({
           break;
       }
     }
-    if (checkCount === 4) {
-      setNumberFormVisible(0);
-    } else {
-      setEducationFormValid(false);
-    }
+    return checkCount === 4 ? true : false;
   };
 
   const handleFormDelete = (e, educationInstance) => {
@@ -72,6 +76,8 @@ function InputEducation({
     );
     const newArray = instancesArray.filter((el) => el !== educationInstance);
     setEducationInstances(newArray);
+
+    setEducationFormValid(true);
   };
 
   const handleNewEducation = () => {
