@@ -79,11 +79,13 @@ function InputEducation({
     setIsFormValid(true);
   };
 
-  const handleNewEducation = () => {
+  const handleNewInstance = () => {
     const index = educationInstances.length + 1;
-    handleInputChange(index, "key", uuidv4());
-    setEducationInstances([...educationInstances, index]);
-    setNumberFormVisible(index);
+    if (isLastInstanceValid()) {
+      handleInputChange(index, "key", uuidv4());
+      setEducationInstances([...educationInstances, index]);
+      setNumberFormVisible(index);
+    }
   };
 
   /*     useEffect(() => {
@@ -130,7 +132,7 @@ function InputEducation({
       })}
       <AddInstanceButton
         buttonText={"+ Education"}
-        handleNewInstance={handleNewEducation}
+        handleNewInstance={handleNewInstance}
         numberGroupVisible={numberGroupVisible}
         groupIndex={3}
       />
