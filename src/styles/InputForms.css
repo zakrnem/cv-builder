@@ -34,11 +34,11 @@
   border-radius: 1.25rem;
   background-color: var(--white);
   border: solid 4px var(--grey);
-  color: var(--default-color)
+  color: var(--default-color);
 }
 
 .add-instance:hover {
-  background-color: var(--hover-bg)
+  background-color: var(--hover-bg);
 }
 
 .add-instance:active {
@@ -56,7 +56,7 @@
   align-items: center;
   gap: 0.2rem;
   background-color: var(--white);
-  border-radius: .75rem;
+  border-radius: 0.75rem;
   color: var(--default-color);
   padding: 0.3rem;
   border: solid 3px var(--grey);

@@ -1,19 +1,19 @@
 .instance-heading > button {
-    background-color: var(--white);
-    border: none;
-    color: var(--default-color);
+  background-color: var(--white);
+  border: none;
+  color: var(--default-color);
 }
 
 .instance-heading > button:hover {
-    background-color: var(--hover-bg);
+  background-color: var(--hover-bg);
 }
 
 .instance-heading > button:active {
-    background-color: var(--active-bg);
+  background-color: var(--active-bg);
 }
 
 .edit-logo {
-    margin-right: 0.5rem;
-    height: 1rem;
-    filter: var(--default-filter)
+  margin-right: 0.5rem;
+  height: 1rem;
+  filter: var(--default-filter);
 }

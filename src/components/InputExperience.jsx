@@ -4,27 +4,87 @@ import InputGroupHeading from "./InputGroupHeading";
 import InstanceHeading from "./InstanceHeading";
 import "../styles/InputExperience.css";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function InputExperience({
   toggleGroup,
   numberGroupVisible,
-  handleExperienceInputChange,
   experienceInput,
-  handleNewExperience,
-  experienceInstances,
+  setExperienceInput,
 }) {
-  const [isFormVisible, setIsFormVisible] = useState(false);
-  const handleEditClick = () => {
-    setIsFormVisible((prevIsFormVisible) => !prevIsFormVisible);
+  const handleInputChange = (index, field, value) => {
+    setExperienceInput((prevExperienceInput) => ({
+      ...prevExperienceInput,
+      [index]: {
+        ...prevExperienceInput[index],
+        [field]: value,
+      },
+    }));
   };
+
+  const [experienceInstances, setExperienceInstances] = useState([1, 2]);
+
+  const [numberFormVisible, setNumberFormVisible] = useState(0);
+
+  const handleEditClick = (arg) => {
+    if (isLastInstanceValid()) {
+      if (arg !== numberFormVisible) setNumberFormVisible(arg);
+    }
+  };
+
+  const [isFormValid, setIsFormValid] = useState(true);
 
   const handleFormReturn = (e) => {
     e.preventDefault();
-    handleEditClick();
+    isLastInstanceValid() ? setNumberFormVisible(0) : setIsFormValid(false);
   };
-  const handleFormDelete = (e) => {
+
+  const isLastInstanceValid = () => {
+    const currentIndex = Object.keys(experienceInput).length;
+    const lastInstance = experienceInput[currentIndex];
+
+    let checkCount = 0;
+    for (let key in lastInstance) {
+      switch (true) {
+        case key === "company":
+          checkCount++;
+          break;
+        case key === "position":
+          checkCount++;
+          break;
+        case key === "startDate":
+          checkCount++;
+          break;
+        case key === "endDate":
+          checkCount++;
+          break;
+      }
+    }
+    return checkCount === 4 ? true : false;
+  };
+
+  const handleFormDelete = (e, experienceInstance) => {
     e.preventDefault();
-    console.log("Delete form");
+    const newExperienceInput = { ...experienceInput };
+    delete newExperienceInput[experienceInstance];
+    setExperienceInput(newExperienceInput);
+
+    const instancesArray = Object.keys(experienceInstances).map(
+      (key) => experienceInstances[key]
+    );
+    const newArray = instancesArray.filter((el) => el !== experienceInstance);
+    setExperienceInstances(newArray);
+
+    setIsFormValid(true);
+  };
+
+  const handleNewInstance = () => {
+    const index = experienceInstances.length + 1;
+    if (isLastInstanceValid()) {
+      handleInputChange(index, "key", uuidv4());
+      setExperienceInstances([...experienceInstances, index]);
+      setNumberFormVisible(index);
+    }
   };
 
   return (
@@ -37,33 +97,35 @@ function InputExperience({
       />
       {Object.keys(experienceInput).map((index) => {
         const experience = experienceInput[index];
+        const newIndex = experienceInstances.length > 1 ? index - 1 : 0;
+        const instance = experienceInstances[newIndex];
         return (
           <div key={experience.key}>
             <InstanceHeading
               title={experience.company}
               handleEditClick={handleEditClick}
               numberGroupVisible={numberGroupVisible}
-              isFormVisible={isFormVisible}
               groupIndex={2}
+              instance={instance}
             />
             <ExperienceForm
-              isFormVisible={isFormVisible}
-              handleExperienceInputChange={handleExperienceInputChange}
+              numberFormVisible={numberFormVisible}
+              numberGroupVisible={numberGroupVisible}
+              handleInputChange={handleInputChange}
               experienceInput={experience}
               handleFormReturn={handleFormReturn}
               handleFormDelete={handleFormDelete}
-              experienceInstance={experienceInstances[index - 1]}
+              experienceInstance={instance}
+              isFormValid={isFormValid}
             />
           </div>
         );
       })}
 
       <AddInstanceButton
-        className={"add-experience"}
         buttonText={"+ Experience"}
-        handleNewInstance={handleNewExperience}
+        handleNewInstance={handleNewInstance}
         numberGroupVisible={numberGroupVisible}
-        isFormVisible={isFormVisible}
         groupIndex={2}
       />
     </div>

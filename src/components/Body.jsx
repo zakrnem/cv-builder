@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 function Body() {
-  const [numberGroupVisible, setNumberGroupVisible] = useState(3);
+  const [numberGroupVisible, setNumberGroupVisible] = useState(2);
 
   const toggleGroup = (arg) => {
     arg === numberGroupVisible
@@ -59,20 +59,6 @@ function Body() {
       key: uuidv4(),
     },
   });
-  const handleExperienceInputChange = (index, field, value) => {
-    setExperienceInput((prevExperienceInput) => ({
-      ...prevExperienceInput,
-      [index]: {
-        ...prevExperienceInput[index],
-        [field]: value,
-      },
-    }));
-  };
-  const [experienceInstances, setExperienceInstances] = useState([1, 2]);
-
-  const handleNewExperience = () => {
-    console.log("New experiece");
-  };
 
   /* useEffect(() => {
     console.log(experienceInput);
@@ -107,14 +93,12 @@ function Body() {
           input={input}
         /> */}
 
-        {/* <InputExperience
+        <InputExperience
           toggleGroup={toggleGroup}
           numberGroupVisible={numberGroupVisible}
-          handleExperienceInputChange={handleExperienceInputChange}
           experienceInput={experienceInput}
-          handleNewExperience={handleNewExperience}
-          experienceInstances={experienceInstances}
-        /> */}
+          setExperienceInput={setExperienceInput}
+        />
 
         <InputEducation
           toggleGroup={toggleGroup}

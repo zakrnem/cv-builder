@@ -1,63 +1,88 @@
 import "../styles/ExperienceForm.css";
 
 function ExperienceForm({
-  isFormVisible,
-  handleExperienceInputChange,
+  numberFormVisible,
+  numberGroupVisible,
+  handleInputChange,
   experienceInput,
   handleFormReturn,
   handleFormDelete,
   experienceInstance,
+  isFormValid,
 }) {
   return (
-    <form style={{ display: isFormVisible ? "" : "none" }}>
-      <label htmlFor="companyName">Company Name</label>
+    <form
+      style={{
+        display:
+          numberFormVisible === experienceInstance && numberGroupVisible !== 0
+            ? ""
+            : "none",
+      }}
+    >
+      <label htmlFor="companyName">
+        Company Name{" "}
+        <p
+          className="required-input"
+          style={{ display: isFormValid ? "none" : "" }}
+        >
+          *Required
+        </p>
+      </label>
       <input
         type="text"
         value={experienceInput.company}
         placeholder="Your employer's name"
         onChange={(e) =>
-          handleExperienceInputChange(
-            experienceInstance,
-            "company",
-            e.target.value
-          )
+          handleInputChange(experienceInstance, "company", e.target.value)
         }
       />
-      <label htmlFor="positionTitle">Position Title</label>
+      <label htmlFor="positionTitle">
+        Position Title{" "}
+        <p
+          className="required-input"
+          style={{ display: isFormValid ? "none" : "" }}
+        >
+          *Required
+        </p>
+      </label>
       <input
         type="text"
         value={experienceInput.position}
         placeholder="Enter your role"
         onChange={(e) =>
-          handleExperienceInputChange(
-            experienceInstance,
-            "position",
-            e.target.value
-          )
+          handleInputChange(experienceInstance, "position", e.target.value)
         }
       />
-      <label htmlFor="startDate">Start Date</label>
+      <label htmlFor="startDate">
+        Start Date{" "}
+        <p
+          className="required-input"
+          style={{ display: isFormValid ? "none" : "" }}
+        >
+          *Required
+        </p>
+      </label>
       <input
         type="month"
         value={experienceInput.startDate}
         onChange={(e) =>
-          handleExperienceInputChange(
-            experienceInstance,
-            "startDate",
-            e.target.value
-          )
+          handleInputChange(experienceInstance, "startDate", e.target.value)
         }
       />
-      <label htmlFor="endDate">End Date</label>
+      <label htmlFor="endDate">
+        End Date{" "}
+        <p
+          className="required-input"
+          style={{ display: isFormValid ? "none" : "" }}
+        >
+          *Required
+        </p>
+      </label>
       <input
         type="month"
         value={experienceInput.endDate}
         onChange={(e) =>
-          handleExperienceInputChange(
-            experienceInstance,
-            "endDate",
-            e.target.value
-          )
+          handleInputChange(experienceInstance, "endDate", e.target.value)
         }
       />
       <label htmlFor="location">Location</label>
@@ -66,11 +91,7 @@ function ExperienceForm({
         value={experienceInput.location}
         placeholder="Type a landmark, city, or address"
         onChange={(e) =>
-          handleExperienceInputChange(
-            experienceInstance,
-            "location",
-            e.target.value
-          )
+          handleInputChange(experienceInstance, "location", e.target.value)
         }
       />
       <label htmlFor="description">Description</label>
@@ -79,16 +100,30 @@ function ExperienceForm({
         rows={4}
         className="experience-description"
         onChange={(e) =>
-          handleExperienceInputChange(
-            experienceInstance,
-            "description",
-            e.target.value
-          )
+          handleInputChange(experienceInstance, "description", e.target.value)
         }
       />
+      <p
+        className="form-validation"
+        style={{ display: isFormValid ? "none" : "" }}
+      >
+        Please enter all the required inputs.
+      </p>
       <div className="form-buttons">
-        <button onClick={handleFormDelete}>Delete</button>
-        <button onClick={handleFormReturn}>Back</button>
+        <button onClick={(e) => handleFormDelete(e, experienceInstance)}>
+          <img
+            src="./src/assets/delete-2-svgrepo-com.svg"
+            className="delete-logo"
+          />
+          Delete
+        </button>
+        <button onClick={handleFormReturn}>
+          <img
+            src="./src/assets/return-svgrepo-com.svg"
+            className="return-logo"
+          />
+          Back
+        </button>
       </div>
     </form>
   );

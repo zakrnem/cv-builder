@@ -35,9 +35,7 @@ function InputEducation({
 
   const handleFormReturn = (e) => {
     e.preventDefault();
-    isLastInstanceValid()
-      ? setNumberFormVisible(0)
-      : setIsFormValid(false);
+    isLastInstanceValid() ? setNumberFormVisible(0) : setIsFormValid(false);
   };
 
   const isLastInstanceValid = () => {
@@ -115,7 +113,7 @@ function InputEducation({
               handleEditClick={handleEditClick}
               numberGroupVisible={numberGroupVisible}
               groupIndex={3}
-              educationInstance={instance}
+              instance={instance}
             />
             <EducationForm
               numberFormVisible={numberFormVisible}

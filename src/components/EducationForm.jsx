@@ -32,11 +32,7 @@ function EducationForm({
         value={educationInput.school}
         placeholder="Name of the School"
         onChange={(e) =>
-          handleInputChange(
-            educationInstance,
-            "school",
-            e.target.value
-          )
+          handleInputChange(educationInstance, "school", e.target.value)
         }
       />
       <label htmlFor="degree">
@@ -53,11 +49,7 @@ function EducationForm({
         value={educationInput.degree}
         placeholder="Type your degree"
         onChange={(e) =>
-          handleInputChange(
-            educationInstance,
-            "degree",
-            e.target.value
-          )
+          handleInputChange(educationInstance, "degree", e.target.value)
         }
       />
       <label htmlFor="startDate">
@@ -73,11 +65,7 @@ function EducationForm({
         type="month"
         value={educationInput.startDate}
         onChange={(e) =>
-          handleInputChange(
-            educationInstance,
-            "startDate",
-            e.target.value
-          )
+          handleInputChange(educationInstance, "startDate", e.target.value)
         }
       />
       <label htmlFor="endDate">
@@ -93,11 +81,7 @@ function EducationForm({
         type="month"
         value={educationInput.endDate}
         onChange={(e) =>
-          handleInputChange(
-            educationInstance,
-            "endDate",
-            e.target.value
-          )
+          handleInputChange(educationInstance, "endDate", e.target.value)
         }
       />
       <label htmlFor="location">Location</label>
@@ -106,11 +90,7 @@ function EducationForm({
         value={educationInput.location}
         placeholder="Enter an address"
         onChange={(e) =>
-          handleInputChange(
-            educationInstance,
-            "location",
-            e.target.value
-          )
+          handleInputChange(educationInstance, "location", e.target.value)
         }
       />
       <p
@@ -121,11 +101,17 @@ function EducationForm({
       </p>
       <div className="form-buttons">
         <button onClick={(e) => handleFormDelete(e, educationInstance)}>
-          <img src="./src/assets/delete-2-svgrepo-com.svg" className="delete-logo" />
+          <img
+            src="./src/assets/delete-2-svgrepo-com.svg"
+            className="delete-logo"
+          />
           Delete
         </button>
         <button onClick={handleFormReturn}>
-          <img src="./src/assets/return-svgrepo-com.svg" className="return-logo" />
+          <img
+            src="./src/assets/return-svgrepo-com.svg"
+            className="return-logo"
+          />
           Back
         </button>
       </div>
