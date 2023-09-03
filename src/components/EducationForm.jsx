@@ -121,9 +121,11 @@ function EducationForm({
       </p>
       <div className="form-buttons">
         <button onClick={(e) => handleFormDelete(e, educationInstance)}>
+          <img src="./src/assets/delete-2-svgrepo-com.svg" className="delete-logo" />
           Delete
         </button>
-        <button type="submit" onClick={handleFormReturn}>
+        <button onClick={handleFormReturn}>
+          <img src="./src/assets/return-svgrepo-com.svg" className="return-logo" />
           Back
         </button>
       </div>

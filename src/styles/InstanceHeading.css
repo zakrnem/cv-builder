@@ -1,6 +1,7 @@
 .instance-heading > button {
     background-color: var(--white);
     border: none;
+    color: var(--default-color);
 }
 
 .instance-heading > button:hover {
@@ -14,4 +15,5 @@
 .edit-logo {
     margin-right: 0.5rem;
     height: 1rem;
+    filter: var(--default-filter)
 }

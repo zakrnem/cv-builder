@@ -1,7 +1,3 @@
-InputEducation:
-  Improve buttons styling.
-
 Standarize styling for use in other modules.
 Clear resume/load example buttons.
-Implement form validation and help messages.
 

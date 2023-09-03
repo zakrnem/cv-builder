@@ -13,6 +13,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
+  --default-color: rgb(33, 53, 71);
+  --default-filter: invert(17%) sepia(19%) saturate(1330%) hue-rotate(167deg) brightness(90%) contrast(89%);
   --grey: rgb(227, 227, 227);
   --active-bg: rgb(172, 172, 172);
   --hover-bg: #e9e9e9;

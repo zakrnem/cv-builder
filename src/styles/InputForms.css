@@ -30,11 +30,11 @@
 .add-instance {
   margin-top: 1.5rem;
   width: fit-content;
-  justify-self: center;
   padding: 0.5rem 1rem;
   border-radius: 1.25rem;
   background-color: var(--white);
   border: solid 4px var(--grey);
+  color: var(--default-color)
 }
 
 .add-instance:hover {
@@ -42,5 +42,30 @@
 }
 
 .add-instance:active {
+  background-color: var(--active-bg);
+}
+
+.return-logo,
+.delete-logo {
+  height: 1.2rem;
+  filter: var(--default-filter);
+}
+
+.form-buttons > button {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  background-color: var(--white);
+  border-radius: .75rem;
+  color: var(--default-color);
+  padding: 0.3rem;
+  border: solid 3px var(--grey);
+}
+
+.form-buttons > button:hover {
+  background-color: var(--grey);
+}
+
+.form-buttons > button:active {
   background-color: var(--active-bg);
 }
