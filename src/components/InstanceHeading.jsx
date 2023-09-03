@@ -1,3 +1,5 @@
+import '../styles/InstanceHeading.css'
+
 function InstanceHeading({
   title,
   handleEditClick,
@@ -13,7 +15,11 @@ function InstanceHeading({
       }}
     >
       <h3>{title}</h3>
-      <button onClick={() => handleEditClick(educationInstance)}>Edit</button>
+      
+      <button onClick={() => handleEditClick(educationInstance)}>
+      <img src="./src/assets/edit-fill-1480-svgrepo-com.svg" className="edit-logo" />
+        Edit
+      </button>
     </div>
   );
 }

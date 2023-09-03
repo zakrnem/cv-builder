@@ -1,9 +1,7 @@
 InputEducation:
-  Prevent 'add-instance' when creating a new instance.
   Improve buttons styling.
-  Standarize function & state naming for use in other modules.
-  Standarize styling for use in other modules.
 
+Standarize styling for use in other modules.
 Clear resume/load example buttons.
 Implement form validation and help messages.
 

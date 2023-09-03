@@ -38,10 +38,9 @@
 }
 
 .add-instance:hover {
-  background-color: #f2f2f2;
+  background-color: var(--hover-bg)
 }
 
 .add-instance:active {
-  color: white;
-  background-color: black;
+  background-color: var(--active-bg);
 }
