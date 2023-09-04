@@ -11,3 +11,11 @@
 .personal-details > form > label {
   text-align: start;
 }
+
+.personal-details > form > input {
+  background-color: var(--grey);
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.6rem;
+  border: none;
+}
