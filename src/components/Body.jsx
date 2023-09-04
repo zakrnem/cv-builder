@@ -1,6 +1,6 @@
 import "../styles/CVcontainer.css";
 import "../styles/InputForms.css";
-import PersonalDetails from "./PersonalDetails";
+import InputDetails from "./InputDetails";
 import InputExperience from "./InputExperience";
 import InputEducation from "./InputEducation";
 import CVdetails from "./CVdetails";
@@ -74,7 +74,7 @@ function Body() {
   return (
     <>
       <div className="inputs-container">
-        <PersonalDetails
+        <InputDetails
           toggleGroup={toggleGroup}
           numberGroupVisible={numberGroupVisible}
           input={detailsInput}

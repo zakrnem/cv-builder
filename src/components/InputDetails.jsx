@@ -1,6 +1,6 @@
-import "../styles/PersonalDetails.css";
+import "../styles/InputDetails.css";
 
-function PersonalDetails({
+function InputDetails({
   toggleGroup,
   numberGroupVisible,
   input,
@@ -66,4 +66,4 @@ function PersonalDetails({
   );
 }
 
-export default PersonalDetails;
+export default InputDetails;
