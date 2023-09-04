@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 function Body() {
-  const [numberGroupVisible, setNumberGroupVisible] = useState(2);
+  const [numberGroupVisible, setNumberGroupVisible] = useState(1);
 
   const toggleGroup = (arg) => {
     arg === numberGroupVisible
@@ -18,25 +18,13 @@ function Body() {
       : setNumberGroupVisible(arg);
   };
 
-  const [input, setInput] = useState({
-    details: {
+  const [detailsInput, setDetailsInput] = useState({
       name: "John Doe",
       email: "email@email.com",
       phone: "123-456-7890",
       location: "Sri Lanka",
-    },
   });
-  const handleInputChange = (group, field, value) => {
-    setInput((prevInput) => ({
-      ...prevInput,
-      [group]: {
-        ...prevInput[group],
-        [field]: value,
-      },
-    }));
-    console.log(input);
-  };
-
+ 
   const [experienceInput, setExperienceInput] = useState({
     1: {
       company: "Umbrella Inc",
@@ -86,12 +74,12 @@ function Body() {
   return (
     <>
       <div className="inputs-container">
-        {/*  <PersonalDetails
-          toggleForm={toggleForm}
-          numberFormVisible={numberFormVisible}
-          handleInputChange={handleInputChange}
-          input={input}
-        /> */}
+        <PersonalDetails
+          toggleGroup={toggleGroup}
+          numberGroupVisible={numberGroupVisible}
+          input={detailsInput}
+          setInput={setDetailsInput}
+        />
 
         <InputExperience
           toggleGroup={toggleGroup}
@@ -111,10 +99,7 @@ function Body() {
       <div className="cv-sheet">
         <div className="cv-container">
           <CVdetails
-            name={input.details.name}
-            email={input.details.email}
-            phone={input.details.phone}
-            location={input.details.location}
+            detailsInput={detailsInput}
           />
 
           <CVexperience experienceInput={experienceInput} />
