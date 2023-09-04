@@ -27,7 +27,6 @@ function InputExperience({
   const [numberFormVisible, setNumberFormVisible] = useState(0);
 
   const handleEditClick = (arg) => {
-    console.log(isLastInstanceValid())
     if (isLastInstanceValid()) {
       if (arg !== numberFormVisible) setNumberFormVisible(arg);
     }
@@ -49,7 +48,7 @@ function InputExperience({
     const objLength = Object.keys(experienceInput).length;
     const lastInstanceIndex = Object.keys(experienceInput)[objLength-1]
     const lastInstance = experienceInput[lastInstanceIndex];
-    
+
     let checkCount = 0;
     for (let key in lastInstance) {
       switch (true) {
@@ -86,7 +85,9 @@ function InputExperience({
   };
 
   const handleNewInstance = () => {
-    const index = experienceInstances.length + 1;
+    const objLength = Object.keys(experienceInput).length;
+    const lastInstanceIndex = Object.keys(experienceInput)[objLength-1]
+    const index = parseInt(lastInstanceIndex) + 1;
     if (isLastInstanceValid()) {
       handleInputChange(index, "key", uuidv4());
       setExperienceInstances([...experienceInstances, index]);
@@ -94,13 +95,13 @@ function InputExperience({
     }
   };
 
-      useEffect(() => {
+ /*      useEffect(() => {
     console.log(experienceInput);
   }, [experienceInput]);
 
   useEffect(() => {
     console.log(experienceInstances);
-  }, [experienceInstances]);
+  }, [experienceInstances]); */
 
   return (
     <div className="experience">
@@ -112,8 +113,7 @@ function InputExperience({
       />
       {Object.keys(experienceInput).map((index) => {
         const experience = experienceInput[index];
-        const newIndex = experienceInstances.length > 1 ? index - 1 : 0;
-        const instance = experienceInstances[newIndex];
+        const instance = parseInt(index)
         return (
           <div key={experience.key}>
             <InstanceHeading

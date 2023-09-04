@@ -84,7 +84,9 @@ function InputEducation({
   };
 
   const handleNewInstance = () => {
-    const index = educationInstances.length + 1;
+    const objLength = Object.keys(educationInput).length;
+    const lastInstanceIndex = Object.keys(educationInput)[objLength-1]
+    const index = parseInt(lastInstanceIndex) + 1;
     if (isLastInstanceValid()) {
       handleInputChange(index, "key", uuidv4());
       setEducationInstances([...educationInstances, index]);
@@ -110,8 +112,7 @@ function InputEducation({
       />
       {Object.keys(educationInput).map((index) => {
         const education = educationInput[index];
-        const newIndex = educationInstances.length > 1 ? index - 1 : 0;
-        const instance = educationInstances[newIndex];
+        const instance = parseInt(index)
         return (
           <div key={education.key}>
             <InstanceHeading
