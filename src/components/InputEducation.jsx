@@ -44,8 +44,9 @@ function InputEducation({
   };
 
   const isLastInstanceValid = () => {
-    const currentIndex = Object.keys(educationInput).length;
-    const lastInstance = educationInput[currentIndex];
+    const objLength = Object.keys(educationInput).length;
+    const lastInstanceIndex = Object.keys(educationInput)[objLength-1]
+    const lastInstance = educationInput[lastInstanceIndex];
 
     let checkCount = 0;
     for (let key in lastInstance) {

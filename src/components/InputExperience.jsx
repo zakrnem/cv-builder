@@ -3,7 +3,7 @@ import ExperienceForm from "./ExperienceForm";
 import InputGroupHeading from "./InputGroupHeading";
 import InstanceHeading from "./InstanceHeading";
 import "../styles/InputExperience.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 function InputExperience({
@@ -27,6 +27,7 @@ function InputExperience({
   const [numberFormVisible, setNumberFormVisible] = useState(0);
 
   const handleEditClick = (arg) => {
+    console.log(isLastInstanceValid())
     if (isLastInstanceValid()) {
       if (arg !== numberFormVisible) setNumberFormVisible(arg);
     }
@@ -45,9 +46,10 @@ function InputExperience({
   };
 
   const isLastInstanceValid = () => {
-    const currentIndex = Object.keys(experienceInput).length;
-    const lastInstance = experienceInput[currentIndex];
-
+    const objLength = Object.keys(experienceInput).length;
+    const lastInstanceIndex = Object.keys(experienceInput)[objLength-1]
+    const lastInstance = experienceInput[lastInstanceIndex];
+    
     let checkCount = 0;
     for (let key in lastInstance) {
       switch (true) {
@@ -91,6 +93,14 @@ function InputExperience({
       setNumberFormVisible(index);
     }
   };
+
+      useEffect(() => {
+    console.log(experienceInput);
+  }, [experienceInput]);
+
+  useEffect(() => {
+    console.log(experienceInstances);
+  }, [experienceInstances]);
 
   return (
     <div className="experience">
