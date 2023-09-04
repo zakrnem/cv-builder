@@ -1,10 +1,9 @@
-Fix 'return' button bug: when required fields aren't provided, after they're added
-    and the 'return' button is pressed again the error messages remain.
+
 Fix 'delete' button bug: after the first instance is deleted, all the others buttons
     'edit' the other instance and 'add' a new instance don't work anymore.
 Fix 'toggle' button bug, when it's pressed in another input group and the user 
     is in the edit instance dash of the first group it doesn't toggle it's visibility.
 
-If the input groups grow in height the CV layaout shouldn't grow.
+If the input groups grow in height the CV layout shouldn't grow.
 Standarize styling for use in other modules.
 Clear resume/load example buttons.

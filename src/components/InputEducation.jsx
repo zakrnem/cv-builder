@@ -35,7 +35,12 @@ function InputEducation({
 
   const handleFormReturn = (e) => {
     e.preventDefault();
-    isLastInstanceValid() ? setNumberFormVisible(0) : setIsFormValid(false);
+    if (isLastInstanceValid()) {
+      setNumberFormVisible(0);
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
   };
 
   const isLastInstanceValid = () => {
