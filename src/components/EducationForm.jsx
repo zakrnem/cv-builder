@@ -12,7 +12,7 @@ function EducationForm({
     <form
       style={{
         display:
-          numberFormVisible === educationInstance && numberGroupVisible !== 0
+          numberFormVisible === educationInstance && numberGroupVisible === 3
             ? ""
             : "none",
       }}

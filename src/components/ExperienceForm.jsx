@@ -14,7 +14,7 @@ function ExperienceForm({
     <form
       style={{
         display:
-          numberFormVisible === experienceInstance && numberGroupVisible !== 0
+          numberFormVisible === experienceInstance && numberGroupVisible === 2
             ? ""
             : "none",
       }}
