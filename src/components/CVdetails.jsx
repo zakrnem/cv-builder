@@ -1,7 +1,7 @@
 import "../styles/CVdetails.css";
-import imgUrl1 from "../assets/mail-svgrepo-com.svg"
-import imgUrl2 from "../assets/phone-svgrepo-com.svg"
-import imgUrl3 from "../assets/location-pin-svgrepo-com.svg"
+import imgUrl1 from "../assets/mail-svgrepo-com.svg";
+import imgUrl2 from "../assets/phone-svgrepo-com.svg";
+import imgUrl3 from "../assets/location-pin-svgrepo-com.svg";
 
 function CVdetails({ detailsInput }) {
   return (
@@ -17,10 +17,7 @@ function CVdetails({ detailsInput }) {
           {detailsInput.phone}
         </div>
         <div className="location">
-          <img
-            src={imgUrl3}
-            className="icon"
-          />
+          <img src={imgUrl3} className="icon" />
           {detailsInput.location}
         </div>
       </div>

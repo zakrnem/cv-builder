@@ -1,4 +1,5 @@
 import "../styles/InputDetails.css";
+import imgUrl1 from "../assets/down-svgrepo-com.svg";
 
 function InputDetails({ toggleGroup, numberGroupVisible, input, setInput }) {
   const handleInputChange = (field, value) => {
@@ -18,7 +19,7 @@ function InputDetails({ toggleGroup, numberGroupVisible, input, setInput }) {
             transform: numberGroupVisible !== 1 ? "" : "rotate(180deg)",
           }}
         >
-          <img src="./src/assets/down-svgrepo-com.svg" />
+          <img src={imgUrl1} />
         </button>
       </div>
       <form style={{ display: numberGroupVisible === 1 ? "" : "none" }}>

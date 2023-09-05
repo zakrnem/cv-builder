@@ -1,3 +1,6 @@
+import imgUrl1 from "../assets/delete-2-svgrepo-com.svg";
+import imgUrl2 from "../assets/return-svgrepo-com.svg";
+
 function EducationForm({
   numberFormVisible,
   numberGroupVisible,
@@ -101,17 +104,11 @@ function EducationForm({
       </p>
       <div className="form-buttons">
         <button onClick={(e) => handleFormDelete(e, educationInstance)}>
-          <img
-            src="./src/assets/delete-2-svgrepo-com.svg"
-            className="delete-logo"
-          />
+          <img src={imgUrl1} className="delete-logo" />
           Delete
         </button>
         <button onClick={handleFormReturn}>
-          <img
-            src="./src/assets/return-svgrepo-com.svg"
-            className="return-logo"
-          />
+          <img src={imgUrl2} className="return-logo" />
           Back
         </button>
       </div>

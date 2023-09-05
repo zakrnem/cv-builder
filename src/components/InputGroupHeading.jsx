@@ -1,3 +1,5 @@
+import imgUrl1 from "../assets/down-svgrepo-com.svg";
+
 function InputGroupHeading({
   title,
   toggleGroup,
@@ -14,7 +16,7 @@ function InputGroupHeading({
           transform: numberGroupVisible === groupIndex ? "" : "rotate(180deg)",
         }}
       >
-        <img src="./src/assets/down-svgrepo-com.svg" />
+        <img src={imgUrl1} />
       </button>
     </div>
   );
