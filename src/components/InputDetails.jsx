@@ -1,16 +1,11 @@
 import "../styles/InputDetails.css";
 
-function InputDetails({
-  toggleGroup,
-  numberGroupVisible,
-  input,
-  setInput,
-}) {
+function InputDetails({ toggleGroup, numberGroupVisible, input, setInput }) {
   const handleInputChange = (field, value) => {
     setInput((prevInput) => ({
       ...prevInput,
-        [field]: value,
-      }));
+      [field]: value,
+    }));
   };
   return (
     <div className="personal-details">
@@ -39,27 +34,21 @@ function InputDetails({
           type="email"
           value={input.email}
           placeholder="email@email.com"
-          onChange={(e) =>
-            handleInputChange("email", e.target.value)
-          }
+          onChange={(e) => handleInputChange("email", e.target.value)}
         />
         <label htmlFor="phoneNumber">Phone number</label>
         <input
           type="tel"
           value={input.phone}
           placeholder="+0 000 000"
-          onChange={(e) =>
-            handleInputChange("phone", e.target.value)
-          }
+          onChange={(e) => handleInputChange("phone", e.target.value)}
         />
         <label htmlFor="address">Address</label>
         <input
           type="text"
           value={input.location}
           placeholder="Enter your city or postal code"
-          onChange={(e) =>
-            handleInputChange("location", e.target.value)
-          }
+          onChange={(e) => handleInputChange("location", e.target.value)}
         />
       </form>
     </div>

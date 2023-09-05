@@ -19,12 +19,12 @@ function Body() {
   };
 
   const [detailsInput, setDetailsInput] = useState({
-      name: "John Doe",
-      email: "email@email.com",
-      phone: "123-456-7890",
-      location: "Sri Lanka",
+    name: "John Doe",
+    email: "email@email.com",
+    phone: "123-456-7890",
+    location: "Sri Lanka",
   });
- 
+
   const [experienceInput, setExperienceInput] = useState({
     1: {
       company: "Umbrella Inc",
@@ -98,9 +98,7 @@ function Body() {
 
       <div className="cv-sheet">
         <div className="cv-container">
-          <CVdetails
-            detailsInput={detailsInput}
-          />
+          <CVdetails detailsInput={detailsInput} />
 
           <CVexperience experienceInput={experienceInput} />
 

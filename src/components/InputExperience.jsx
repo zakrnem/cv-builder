@@ -46,7 +46,7 @@ function InputExperience({
 
   const isLastInstanceValid = () => {
     const objLength = Object.keys(experienceInput).length;
-    const lastInstanceIndex = Object.keys(experienceInput)[objLength-1]
+    const lastInstanceIndex = Object.keys(experienceInput)[objLength - 1];
     const lastInstance = experienceInput[lastInstanceIndex];
 
     let checkCount = 0;
@@ -86,7 +86,7 @@ function InputExperience({
 
   const handleNewInstance = () => {
     const objLength = Object.keys(experienceInput).length;
-    const lastInstanceIndex = Object.keys(experienceInput)[objLength-1]
+    const lastInstanceIndex = Object.keys(experienceInput)[objLength - 1];
     const index = parseInt(lastInstanceIndex) + 1;
     if (isLastInstanceValid()) {
       handleInputChange(index, "key", uuidv4());
@@ -95,7 +95,7 @@ function InputExperience({
     }
   };
 
- /*      useEffect(() => {
+  /*      useEffect(() => {
     console.log(experienceInput);
   }, [experienceInput]);
 
@@ -113,7 +113,7 @@ function InputExperience({
       />
       {Object.keys(experienceInput).map((index) => {
         const experience = experienceInput[index];
-        const instance = parseInt(index)
+        const instance = parseInt(index);
         return (
           <div key={experience.key}>
             <InstanceHeading

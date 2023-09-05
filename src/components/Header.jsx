@@ -1,4 +1,5 @@
 import "../styles/Header.css";
+import imgUrl from "../assets/github-svgrepo-com.svg";
 
 function Header() {
   return (
@@ -9,7 +10,7 @@ function Header() {
       />
       <h1>CV Builder</h1>
       <a href="https://github.com/zakrnem/" title="Zakrnem's Github">
-        <img src="./src/assets/github-svgrepo-com.svg" className="gh-logo" />
+        <img src={imgUrl} className="gh-logo" />
       </a>
     </header>
   );

@@ -45,7 +45,7 @@ function InputEducation({
 
   const isLastInstanceValid = () => {
     const objLength = Object.keys(educationInput).length;
-    const lastInstanceIndex = Object.keys(educationInput)[objLength-1]
+    const lastInstanceIndex = Object.keys(educationInput)[objLength - 1];
     const lastInstance = educationInput[lastInstanceIndex];
 
     let checkCount = 0;
@@ -85,7 +85,7 @@ function InputEducation({
 
   const handleNewInstance = () => {
     const objLength = Object.keys(educationInput).length;
-    const lastInstanceIndex = Object.keys(educationInput)[objLength-1]
+    const lastInstanceIndex = Object.keys(educationInput)[objLength - 1];
     const index = parseInt(lastInstanceIndex) + 1;
     if (isLastInstanceValid()) {
       handleInputChange(index, "key", uuidv4());
@@ -112,7 +112,7 @@ function InputEducation({
       />
       {Object.keys(educationInput).map((index) => {
         const education = educationInput[index];
-        const instance = parseInt(index)
+        const instance = parseInt(index);
         return (
           <div key={education.key}>
             <InstanceHeading
