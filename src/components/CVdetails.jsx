@@ -1,4 +1,7 @@
 import "../styles/CVdetails.css";
+import imgUrl1 from "../assets/mail-svgrepo-com.svg"
+import imgUrl2 from "../assets/phone-svgrepo-com.svg"
+import imgUrl3 from "../assets/location-pin-svgrepo-com.svg"
 
 function CVdetails({ detailsInput }) {
   return (
@@ -6,16 +9,16 @@ function CVdetails({ detailsInput }) {
       <h2>{detailsInput.name}</h2>
       <div className="cv-details">
         <div className="email">
-          <img src="./src/assets/mail-svgrepo-com.svg" className="icon" />
+          <img src={imgUrl1} className="icon" />
           {detailsInput.email}
         </div>
         <div className="phone">
-          <img src="./src/assets/phone-svgrepo-com.svg" className="icon" />
+          <img src={imgUrl2} className="icon" />
           {detailsInput.phone}
         </div>
         <div className="location">
           <img
-            src="./src/assets/location-pin-svgrepo-com.svg"
+            src={imgUrl3}
             className="icon"
           />
           {detailsInput.location}
